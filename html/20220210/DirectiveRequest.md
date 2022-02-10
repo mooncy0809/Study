@@ -29,7 +29,7 @@
  
    - 내부 객체로 인해 개발자는 좀더 쉽게 JSP 프로그래밍이 가능함. 
  
-#### request 내부 객체 
+### request 내부 객체 
    
   
    - javax.servlet 
