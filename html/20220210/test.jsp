@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
- 
+ <!-- 템플릿 생성 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
