@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/form/select_form2.html</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 28px;}
+</style>
+</head>
+<body>
+  <form name='frm' action='./select_proc2.jsp' method='GET'>
+    <H2>주말 여행지 다중선택</H2>
+    1박 2일 국내 여행 직접 입력:
+    <input type='text' name='travel1' placeholder="동해등 입력" 
+               autofocus="autofocus" style="width: 50%;">
+    <br>
+    3박 4일 해외 여행지 선택:
+    <select name="travel2" multiple="multiple">
+      <option value="A01" selected="selected">스위스</option>  
+      <option value="A02" selected="selected">캐나다</option>
+      <option value="A03">노르웨이</option>
+      <option value="A04">아일랜드</option>
+      <option value="A05">네덜란드</option>
+      <option value="A06">오스트리아</option>
+      <option value="A07">미국</option>
+      <option value="A08">베트남</option>
+    </select>
+ 
+    <br>
+    <input type='submit' value='신청'>
+  </form>
+</body>
+</html>
