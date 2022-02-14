@@ -43,9 +43,9 @@
      . Windows: ./setup/test.txt, ../test.txt, test.txt등
      . Linux     : ./setup/test.txt, ../test/txt, test.txt등
      
-# Web 개발 Content 유형
+## Web 개발 Content 유형
 
-1. 기능의 분류(1 본)
+1. 기능의 분류
  
 1) 입력 기능
    - 댓글 입력, 회원 가입등
@@ -93,7 +93,7 @@
 
 
 
-[02] Form
+## Form
 
 1. HTML Form의 형태 
    - 데이터를 입력받을 목적으로 사용하는 태그. 
