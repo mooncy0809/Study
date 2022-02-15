@@ -111,7 +111,7 @@
    </HEAD>
  
 3. 특정 파일에 기록
-  - 사용:\<link href="../css/style.css" rel="Stylesheet" type="text/css">\
+  - 사용: \<link href="../css/style.css" rel="Stylesheet" type="text/css">
  
   
 ### Margin, Padding 사용
@@ -153,7 +153,7 @@
     . vertical-align: middle; 속성을 사용하려면 "display: table-cell;" 속성이 선언되어야 함.
     . "display: table-cell;" 속성을 사용하려면 "display: table;"이 선어되어 있어야함.
   <!-- 수직, 수평 정렬 -->
-  <DIV style="width: 50%; height: 200px;
+  \<DIV style="width: 50%; height: 200px;
                   text-align: center; margin: 20px auto;
                   padding: 0px; border: solid 2px #FF99FF;
                   display: table;">
@@ -161,13 +161,13 @@
                      text-align: center; display: table-cell; vertical-align: middle;">
  
     </DIV>
-  </DIV>
+  </DIV>\
   - height를 사용하지 않는 경우의 새로 정렬
-  <DIV style="border: solid 1px #000000;
+  \<DIV style="border: solid 1px #000000;
                    width: 50%;
                    margin: 30px auto;
                    padding: 5% 5%;
-                   text-align: center;">
+                   text-align: center;">\
   
 ### DIV 태그 Radius 적용 
  
