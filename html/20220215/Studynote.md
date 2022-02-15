@@ -111,7 +111,7 @@
    </HEAD>
  
 3. 특정 파일에 기록
-  - 사용:<link href="../css/style.css" rel="Stylesheet" type="text/css">
+  - 사용:'<link href="../css/style.css" rel="Stylesheet" type="text/css">'
  
   
 ### Margin, Padding 사용
