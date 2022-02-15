@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/css/style9.html</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 26px;}
+  DIV {
+    margin: 0px auto;
+    width: 80%;
+  }
+  
+  .css-bold {
+    font-weight: bold;
+  }
+  
+  .css-red {
+  color: #FF0000;
+  }
+
+  /* 부모 태그: css-bold 사용, 자식 태그: title class 사용 */
+  .css-bold .title {
+    color: #00FF00;
+    font-size: 36px;
+    text-decoration: underline;
+  }
+  
+  /* title class만 적용한경우 */
+  .title {
+    color: #0000FF;
+    font-size: 40px;
+    text-decoration: none;
+  }
+ 
+</style>
+</head>
+<body>
+  <DIV>1. class 속성을 적용하지 않은 경우</DIV>
+  <DIV class='css-bold'>2. css-bold</DIV>
+  <DIV class='css-red'>3. css-red</DIV>
+  <!-- class 모두 적용 -->
+  <DIV class='css-bold css-red'>4. css-bold css-red</DIV>
+  
+  <!-- 동시적용 -->
+  <DIV class='css-bold'>  <!-- 부모 클래스 적용 -->
+    <!-- 부모 자식이 동시에 선언된 .css-bold .title 적용 ★ -->
+    <DIV class='title'>   
+      5. css-bold .title  
+    </DIV>
+  </DIV>
+  
+  <DIV class='title'>6. CSS 실습</DIV>
+
+</body>
+</html>
