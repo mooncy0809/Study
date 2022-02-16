@@ -3,33 +3,33 @@
        추가되었습니다.
      - DIV의 기능과 많이 비슷합니다.
 
-1. <HEADER>
+1. \<HEADER>
 - 화면 상단의 제목을 의미
  
  
-2. <NAV>
+2. \<NAV>
 - 메뉴를 의미
  
  
-3. <ASIDE>
+3. \<ASIDE>
 - 서브 메뉴를 의미하며 화면 우측등에 출력.
     
   
-4. <SECTION>
+4. \<SECTION>
 - 내용을 분할함을 의미, 미디어 뉴스의 분야등을 의미 
 - <SECTION> 태그로 다시 분할될 수 있습니다.
   
    
-5. <ARTICLE>
+5. \<ARTICLE>
 - <SECTION> 태그에 속해서 출력되는 내용을 의미
 - 한건의 기사등
  
  
-6. <FOOTER>
+6. \<FOOTER>
 - 화면 하단에 출력되는 내용을 의미
   
 ## TABLE 관련 태그
-      - <TABLE>, <CAPTION>, <COLGROUP>, <TR>, <TD>, <THEAD>, <TBODY>, <TFOOT> 태그
+      - \<TABLE>, <CAPTION>, <COLGROUP>, <TR>, <TD>, <THEAD>, <TBODY>, <TFOOT> 태그
       - 행과 열의 구조를 갖는 양식 제작시 사용합니다.
       - 게시판 형태의 컨텐츠 출력에 사용합니다.
       - 테이블 사용예)
@@ -37,47 +37,47 @@
         . 기상청 예보 
  
  
-1. <TABLE>
+1. \<TABLE>
 - 행과 열의 구조를 출력하는 태그
 
 
-2. <COLGROUP>
+2. \<COLGROUP>
 - 컬럼의 그룹으로 지정하여 공통으로 속성 적용
-- 전체 <TH><TD> 태그에 공통적으로 적용됨.
+- 전체 \<TH><TD> 태그에 공통적으로 적용됨.
 - 생략 가능 
  
 
-3. <CAPTION>
+3. \<CAPTION>
 - 테이블 제목 출력
 - 생략 가능
 
  
-4. <TR>: Table Row
+4. \<TR>: Table Row
 - 행을 출력하는 태그
  
  
-5. <TH>: Table Header
+5. \<TH>: Table Header
 - 컬럼의 제목을 출력하는 태그
 - 강조 효과(Bold)와 가운데 정렬(Text-align: center)을 지원합니다.
 - <TR> 태그의 구성 요소
  
   
-6. <TD>: Table Data
+6. \<TD>: Table Data
 - 열을 출력하는 태그, 데이터 출력
 - <TR> 태그의 구성 요소
  
  
-7. <THEAD>
+7. \<THEAD>
 - 테이블 머리말을 출력하는 태그
 - 생략 가능
  
  
-8. <TBODY>
+8. \<TBODY>
 - 테이블 내용을 출력하는 태그
 - 생략 가능
  
  
-9. <TFOOT> 태그
+9. \<TFOOT> 태그
 - 테이블 하단을 출력하는 태그
 - 생략 가능
  
