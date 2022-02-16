@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>http://localhost:9091/menu/dropdown1.html</title>
+<style type="text/css">
+  * {
+    font-family: Malgun Gothic; 
+    font-size: 20px; 
+    color: #555555;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li{
+    list-style: none;  /* 블렛기호(마커) 삭제 */
+  }
+
+  .link_menu_top {
+    text-decoration: none;  /* 밑줄 없음 */
+    color: #FFFFFF;
+  }
+
+  .link_menu_top:hover {  /* mouse hover */
+    text-decoration: none;
+    color: #FFFF00;
+  }
+    
+  /* DIV 태그 id가 menu인 태그에 적용 */
+  #menu {
+    width: 100%;
+    height: 50px;
+    background: #DD0000;
+    line-height: 50px; 
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* float 속성의 가운데 정렬 선언 */
+  #menu ul {
+    float: right; 
+    position: relative; 
+    left: -50%;  
+  } /* 가운데정렬하는 공식과도 같은 코드, 원래 li는 줄바꿈돼버림 */
+
+  /* top 메뉴 */
+  #menu > ul > li {
+    float: left;
+    width: 130px;
+    position: relative;
+    left: 50%;
+  }
+ 
+  /* top 메뉴에 마우스가 hover되었을 때 배경색을 변경 */
+  #menu > ul > li:hover {
+    background-color: #EE0000;
+  }
+
+</style>
+  
+</head>
+<body>
+<div id="menu">
+  <ul>
+    <li><a href="javascript: alert('국내 여행');" class='link_menu_top'>국내 여행</a></li>
+    <li><a href="javascript: alert('해외 여행');" class='link_menu_top'>해외여행</a></li>
+    <li><a href="javascript: alert('영화');" class='link_menu_top'>영화</a></li>
+    <li><a href="javascript: alert('기타');" class='link_menu_top'>기타</a></li>
+  </ul>
+</div>
+</body>
+</html>
