@@ -1,6 +1,6 @@
 ## HTML 특수 문자 Entity
 - 태그의 구조와 관련된 문자는 특수문자(Entity)로 변환하여 출력해야함.
-  <:＆lt;
+  ```<:＆lt;
   >: ＆gt;
    ': ＆apos;
    ": ＆quot;
@@ -28,10 +28,10 @@
       . HTML이 간결해집니다.
 
    
-     - 주석: ```/* */```
+     - 주석: /* */
  
      - SELECTOR{속성:값}의 형태, SELECTOR(HTML 태그 선택자)는 어느 태그에 CSS를 적용할지를 지정
-       ```
+    
        예)
           * {          <-- 모든 태그
             font-size: 20px;
@@ -86,14 +86,15 @@
    * Chrome에서 CSS file이 적용이 안되면 [설정 -> 인터넷 사용 기록을 삭제]하고 '새로고침' 합니다.
      - Ctrl + Shift + Del 키를 동시에 누릅니다(주로 CSS 파일에서 문제 발생).
      - 1시간전 기록만 삭제 권장
-   ```
+  
 
 ### CSS 적용 방법
 1. 특정 태그에 직접 스타일을 선언하는 경우, 태그마다 값이 다른 경우 주로 사용
-   <DIV style='font-size: 24px;'></DIV>
+   \<DIV style='font-size: 24px;'></DIV>
  
 2. <HEAD>태그안에 스타일을 주는 경우, 태그들이 공통적인 CSS를 사용하는 경우
-   <HEAD> 
+  ```
+  <HEAD> 
      <style type="text/css"> 
        DIV{ 
          font-family: gulim; 
@@ -111,7 +112,7 @@
        } 
      </style> 
    </HEAD>
- 
+ ```
 3. 특정 파일에 기록
   - 사용: \<link href="../css/style.css" rel="Stylesheet" type="text/css">
  
@@ -155,7 +156,8 @@
     . vertical-align: middle; 속성을 사용하려면 "display: table-cell;" 속성이 선언되어야 함.
     . "display: table-cell;" 속성을 사용하려면 "display: table;"이 선어되어 있어야함.
   <!-- 수직, 수평 정렬 -->
-  \<DIV style="width: 50%; height: 200px;
+  ```
+  <DIV style="width: 50%; height: 200px;
     
                   text-align: center; margin: 20px auto;
     
@@ -170,8 +172,10 @@
     </DIV>
   
   </DIV>
+  ```
   - height를 사용하지 않는 경우의 새로 정렬
-  \<DIV style="border: solid 1px #000000;
+  ```
+  <DIV style="border: solid 1px #000000;
     
                    width: 50%;
     
@@ -180,7 +184,7 @@
                    padding: 5% 5%;
     
                    text-align: center;">
-  
+  ```
 ### DIV 태그 Radius 적용 
  
 1) 문자 및 태그 정렬
@@ -209,6 +213,7 @@
     link -> visited -> hover -> active
 
 3) 사용
+ ```
   A:link{  /* 방문전 상태 */
     text-decoration: none; /* 밑줄 삭제 */
     color: #555555;
@@ -228,10 +233,10 @@
     text-decoration: underline; /* 밑줄 출력 */
     color: #7777FF;
   }
-    
+  ```  
 ### HTML에 기본 설정된 태그의 margin, padding 속성을 0px로 설정하고, CSS를 적용하면
    화면에 HTML 태그를 배치할 때 태그로 인한 여백 때문에 발행할 수 있는 영역 문제를 피할 수 있음.
- 
+ ```
   /* 모든 태그에 적용 */
   * {
      font-family: Malgun Gothic; 
@@ -240,7 +245,7 @@
      padding: 0px;
      color: #555555;
   }  
-  
+ ``` 
   
 5. CSS link 설정시 절대 경로의 지정
    - style.css등의 파일을 기준으로 경로를 지정합니다. 
@@ -254,18 +259,20 @@
 * 2021부터 MS는 IE를 포기하고 크롬과 같은 플랫폼을 사용하여 엣지를 제공함.
     
 1) 선언
+  ```
   A.button {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
   }
-  
+  ```
 2) 사용
-<A class='button' style='text-decoration: none; ' href='./create_file1_form.jsp?categoryno=<%=categoryno %>&pdsno=<%=pdsno %>'>새로운 파일 등록</A>
+\<A class='button' style='text-decoration: none; ' href='./create_file1_form.jsp?categoryno=<%=categoryno %>&pdsno=<%=pdsno %>'>새로운 파일 등록</A>
   
    
 7. A 태그에 다양한 CSS 적용
 1) 선언
+```
 .basiclink { font-size: 16px; }
 .basiclink:link { color: #FF0000; }
 .basiclink:visited { color: #AA0000; }
@@ -277,10 +284,12 @@
 .menulink:visited { color: #AA0000; }
 .menulink:hover { background-color: #FFFF00; }
 .menulink:active { background-color: #FF5500; }
-
+```
 
  
 2) 사용
+  ```
    <A class="basiclink" style="text-decoration: none;" href="http://www.daum.net">Daum</A>
    <A class="menulink" style="text-decoration: none;" href="http://www.kma.go.kr">기상청</A>
+  ```
     
