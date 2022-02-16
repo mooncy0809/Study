@@ -29,7 +29,7 @@
 - 화면 하단에 출력되는 내용을 의미
   
 ## TABLE 관련 태그
-      - \<TABLE>, <CAPTION>, <COLGROUP>, <TR>, <TD>, <THEAD>, <TBODY>, <TFOOT> 태그
+      - <TABLE>, <CAPTION>, <COLGROUP>, <TR>, <TD>, <THEAD>, <TBODY>, <TFOOT> 태그
       - 행과 열의 구조를 갖는 양식 제작시 사용합니다.
       - 게시판 형태의 컨텐츠 출력에 사용합니다.
       - 테이블 사용예)
@@ -43,7 +43,7 @@
 
 2. \<COLGROUP>
 - 컬럼의 그룹으로 지정하여 공통으로 속성 적용
-- 전체 \<TH><TD> 태그에 공통적으로 적용됨.
+- 전체 \<TH>\<TD> 태그에 공통적으로 적용됨.
 - 생략 가능 
  
 
