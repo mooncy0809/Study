@@ -130,7 +130,8 @@
  
  
 7. \<OPTGROUP>: option 태그의 그룹화 태그
-    '''<label>
+    <pre>
+    <label>
       예약 메뉴:
       <select name="food">
         <optgroup label="김밥류">
@@ -149,7 +150,8 @@
           <option value='부대찌게'>부대찌게</option>
         </optgroup>
       </select>
-    </label>'''
+    </label>
+    </pre>
  
  
 8. \<BUTTON>: 버튼 기능 지원
