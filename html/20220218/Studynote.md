@@ -59,7 +59,7 @@
 2) javax.servlet.http.HttpServlet class
   - 메소드가 대부분 protected 접근 제한자라 서블릿 제작시 상속받아
     doGet(), doPost()등을 구현합니다.
-  - protected는 상속시에만 사용할 수 있다.
+  - protected는 상속시에만 사용할 수 있다.<br>
 ![image](https://user-images.githubusercontent.com/84116509/154664621-da75c7c5-deb5-4d2f-b19e-56d1d99a18ec.png)
 2. 서블릿의 생명주기(약속된 메소드가 자동 실행: CallBack method)
    - init() ---> service() ---> doGet(), doPost() ---> destroy()
