@@ -96,7 +96,7 @@
 
    - Controller: Java Servlet, 접속자의 주소를 전송받아 GET/POST 방식을 구분하여
                    로직을 실행하는 기능, 관련 로직을 호출하는 기능, 로깅, 보안등 공통 로직을
-                   실행하는 기능.
+                   실행하는 기능.<br>
    ![image](https://user-images.githubusercontent.com/84116509/154664862-3ad4a3c9-fd2a-421d-b9d4-2281d1e2498f.png)
 
 2. 자바 서블릿 기반  MVC(JSP Model 2) 패턴
