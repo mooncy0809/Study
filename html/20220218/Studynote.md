@@ -69,7 +69,7 @@
      response.setContentType("text/html;charset=utf-8");
      request.setCharacterEncoding("utf-8");
      PrintWriter out =  response.getWriter();
-     out.println("<h2>문자열 출력</h2>");
+     out.println("\<h2>문자열 출력\</h2>");
 
    - service() 메소드는 GET/POST 방식을 모두 구분하지 않고 처리하는 기능을하며,
      선언시 doGet(), doPost()가 호출되지 않습니다. 따라서 초기화 코드는 init() 메소드를
