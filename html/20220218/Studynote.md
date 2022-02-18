@@ -104,9 +104,8 @@
        - JSP: 파일명과 일치하는 하나의 요청만 받을 수 있음, 파일명이 다르면 404 발생
          예) form.jsp --> proc.jsp
        - Servlet: 설정에따라 무한대의 요청을 받아 처리 가능, 실제 존재하지 않는 파일 지정 가능,
-         접근 주소를 명령어로 이용, URI Command Pattern 이라고 함. 
-
-   ![image](https://user-images.githubusercontent.com/84116509/154664949-131afe11-74fb-47a9-b42f-246313eb3d7d.png)
+         접근 주소를 명령어로 이용, URI Command Pattern 이라고 함. <br>
+![image](https://user-images.githubusercontent.com/84116509/154664949-131afe11-74fb-47a9-b42f-246313eb3d7d.png)
 1) BROWSER: 접속자, Chrome등 브러우저
 2) Servlet(Controller): 사용자의 요청을 받아 주소를 분석하여 해당하는 빈을 실행합니다.
                             JSP 처럼 GET, POST 방식 요청 접수 처리
