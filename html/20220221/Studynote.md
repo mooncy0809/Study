@@ -143,7 +143,7 @@
     int no2 = Integer.parseInt(request.getParameter("no2"));
 
 ▷ /src/main/java/dev.mvc.calc.CalcCont.java 
-'''
+```
 package dev.mvc.calc;
  
  
@@ -152,7 +152,7 @@ public class CalcCont {
     System.out.println("-> CalcCont created.");
   }
 }    
-'''
+```
 ## View 구현 
    - 값의 추출: request.getAttribute("no1");
    - em: 1em: 16 px 기준, 부모 글꼴에 따라 % 처럼 가변적인 크기가 됨.
@@ -164,7 +164,7 @@ public class CalcCont {
 
 1) Scriptlet 사용의 경우
 ▷ /src/main/webapp/WEB-INF/views/calc/calc1.jsp 
-'''
+```
 <%@ page contentType="text/html; charset=UTF-8" %>
  
 <!DOCTYPE html>
@@ -188,12 +188,12 @@ public class CalcCont {
 </DIV> <!-- container END -->
 </body>
 </html>
-''' 
+``` 
   
 
 2) EL 사용의 경우
 ▷ /src/main/webapp/WEB-INF/views/calc/calc2.jsp 
-'''
+```
 <%@ page contentType="text/html; charset=UTF-8" %>
  
 <!DOCTYPE html>
@@ -217,7 +217,7 @@ public class CalcCont {
 </DIV> <!-- container END -->
 </body>
 </html>
-'''
+```
 ### 실행 프로세스
 
 ① http://localhost:9091/calc/add.do?no1=100&no2=50 입력
