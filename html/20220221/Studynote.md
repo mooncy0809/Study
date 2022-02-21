@@ -45,20 +45,20 @@
 -------------------------------------------------------------------------------------
  
 ▷ 삼항연산자 : 조건 ? 참 : 거짓
-    '''
+    ```
     ${colors == null ? "transparent" : colors} 
     ,
     ${status == 'A001' ? "checked='ckecked'" : "" } 
     ,
     ${msg1 != null ? img : "" } ${msg1}
-   '''
+   ```
    - SELECT 태그
-  '''
+  ```
      <select name='visible'>
        <option value='Y' ${categrpVO.visible == 'Y' ? "selected='selected'" : "" }>Y</option>
        <option value='N' ${categrpVO.visible == 'N' ? "selected='selected'" : "" }>N</option>
      </select>
-  '''
+  ```
 ▷ 그 외 예약어 : true, false, null, instanceof, empty( null이거나 공백일때 ) 
   
   
@@ -78,14 +78,14 @@
  
  
 ### 3. EL 객체의 사용예 
-   '''
+   ```
    1) ${pageContext.request.requestURI}: request URI 
    2) ${sessionScope.profile}                : session 영역에서 profile이라는 이름으로 
                                                      저장된 객체 
    3) ${param.productId}                      : productId라는 이름의 파라미터 값 
    4) ${paramValues.productId}             : productId라는 이름의 파라미터 값들 
    5) ${pageContext.request.contextPath}: Context Path 추출(request.getContextPath()과 동일)  
-   '''
+   ```
  
 ### 4. request 접근
    - http://localhost:9091/el/request.jsp
