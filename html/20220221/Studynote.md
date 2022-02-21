@@ -98,13 +98,13 @@
     없으면 session에 접근하여 데이터를 찾아옵니다.
     
 ### 7. EL 문자열 함수의 사용
-'''
+```
   1. ${fname.length() }<br>
   2. ${fname.substring(0, 3) }<br>
   3. ${fname.toUpperCase() }<br>
   4. ${fname.equals("winter.jpg") }<br>
   5. ${fname.equalsIgnoreCase("Winter.jpg")}<br>
-'''
+```
 
 ## Controller(Action) 구현
 
