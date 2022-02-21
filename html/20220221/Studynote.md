@@ -8,16 +8,16 @@
    - 표현 방법: ${expr}
    - EL은 3항 연사자외에 제어문을 사용할 수 없어 JSTL을 같이 이용해야 합니다. 
 
-1) MVC 처리 흐름
+### MVC 처리 흐름
    
-① Controller로 'http://127.0.0.1:9091/controller2/spring.do2' 요청
-② Controller는 관련 클래스(Model)를 실행, DBMS 자료 처리, 알고리즘을 처리
-③ Controller는 Model class 처리 결과를 받아 View JSP 페이지로 전달(forwarding, RequestDispatcher)
-④ View JSP는 Controller에서 보낸 데이터를 EL, JSTL등을 이용하여 출력
+① Controller로 'http://127.0.0.1:9091/controller2/spring.do2' 요청<Br>
+② Controller는 관련 클래스(Model)를 실행, DBMS 자료 처리, 알고리즘을 처리<Br>
+③ Controller는 Model class 처리 결과를 받아 View JSP 페이지로 전달(forwarding, RequestDispatcher)<Br>
+④ View JSP는 Controller에서 보낸 데이터를 EL, JSTL등을 이용하여 출력<Br>
  
 1. 표현 언어의 연산자   
  
-   1) 연산자  
+1 연산자  
 -------------------------------------------------------------------------------------
         .                  빈의 프로퍼티나 맵(Map)의 엔트리 접근 
         []                  배열이나 리스트(List) 엘리먼트 접근 
@@ -42,7 +42,7 @@
                             함수 인자를 가질 수도 있다. 
 -------------------------------------------------------------------------------------
  
-2) 삼항연산자 : 조건 ? 참 : 거짓
+2 삼항연산자 : 조건 ? 참 : 거짓
     ${colors == null ? "transparent" : colors} 
     ,
     ${status == 'A001' ? "checked='ckecked'" : "" } 
@@ -55,7 +55,7 @@
        <option value='N' ${categrpVO.visible == 'N' ? "selected='selected'" : "" }>N</option>
      </select>
   
-3) 그 외 예약어 : true, false, null, instanceof, empty( null이거나 공백일때 ) 
+3 그 외 예약어 : true, false, null, instanceof, empty( null이거나 공백일때 ) 
   
   
 2. JSP 내부 객체(request, response, session, application등)에 
