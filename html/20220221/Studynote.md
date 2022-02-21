@@ -44,7 +44,7 @@
                             함수 인자를 가질 수도 있다. 
 -------------------------------------------------------------------------------------
  
-▷ 삼항연산자 : 조건 ? 참 : 거짓
+▷ 삼항연산자 : 조건 ? 참 : 거짓<br>
     ```
     ${colors == null ? "transparent" : colors} 
     ,
@@ -52,7 +52,8 @@
     ,
     ${msg1 != null ? img : "" } ${msg1}
    ```
-   - SELECT 태그
+           
+  * SELECT 태그
   ```
      <select name='visible'>
        <option value='Y' ${categrpVO.visible == 'Y' ? "selected='selected'" : "" }>Y</option>
