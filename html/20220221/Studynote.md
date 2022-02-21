@@ -15,9 +15,9 @@
 ③ Controller는 Model class 처리 결과를 받아 View JSP 페이지로 전달(forwarding, RequestDispatcher)<Br>
 ④ View JSP는 Controller에서 보낸 데이터를 EL, JSTL등을 이용하여 출력<Br>
  
-1. 표현 언어의 연산자   
+1) 표현 언어의 연산자   
  
-1 연산자  
+▷ 연산자  
 -------------------------------------------------------------------------------------
         .                  빈의 프로퍼티나 맵(Map)의 엔트리 접근 
         []                  배열이나 리스트(List) 엘리먼트 접근 
@@ -42,7 +42,7 @@
                             함수 인자를 가질 수도 있다. 
 -------------------------------------------------------------------------------------
  
-2 삼항연산자 : 조건 ? 참 : 거짓
+▷ 삼항연산자 : 조건 ? 참 : 거짓
     ${colors == null ? "transparent" : colors} 
     ,
     ${status == 'A001' ? "checked='ckecked'" : "" } 
@@ -55,10 +55,10 @@
        <option value='N' ${categrpVO.visible == 'N' ? "selected='selected'" : "" }>N</option>
      </select>
   
-3 그 외 예약어 : true, false, null, instanceof, empty( null이거나 공백일때 ) 
+▷ 그 외 예약어 : true, false, null, instanceof, empty( null이거나 공백일때 ) 
   
   
-2. JSP 내부 객체(request, response, session, application등)에 
+2) JSP 내부 객체(request, response, session, application등)에 
    접근하기위해 EL에서 제공하는 객체 
    - pageContext      : PageContext 객체 
    - pageScope        : page 영역에 포함된 객체 
@@ -73,26 +73,27 @@
    - initParam          :컨텐츠의 초기화 파라미터들 
  
  
-3. EL 객체의 사용예 
+3) EL 객체의 사용예 
+   '''
    1) ${pageContext.request.requestURI}: request URI 
    2) ${sessionScope.profile}                : session 영역에서 profile이라는 이름으로 
                                                      저장된 객체 
    3) ${param.productId}                      : productId라는 이름의 파라미터 값 
    4) ${paramValues.productId}             : productId라는 이름의 파라미터 값들 
    5) ${pageContext.request.contextPath}: Context Path 추출(request.getContextPath()과 동일)  
+   '''
  
- 
-4. request 접근
+4) request 접근
    - http://localhost:9091/el/request.jsp
 
-5. GET 방식 파라미터의 접근
+5) GET 방식 파라미터의 접근
    - http://localhost:9091/el/param.jsp?money=100000&month=24
 
-6. 객체의 접근 
+6) 객체의 접근 
   - ${} EL 선언은 기본적으로 request 객체에 접근해서 데이터를 찾으며,
     없으면 session에 접근하여 데이터를 찾아옵니다.
     
-7. EL 문자열 함수의 사용
+7) EL 문자열 함수의 사용
 '''
   1. ${fname.length() }<br>
   2. ${fname.substring(0, 3) }<br>
