@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/css/style4.html</title>
+
+<link href="./style0.css" rel="Stylesheet" type="text/css">
+<!-- 
+** 스타일 적용 방법 **
+SPAN 태그에 직접 CSS를 명시하기, style 속성 사용하기
+- 특정 단어에 효과를 주는 경우 사용, Style을 반복해서 적용하지 않는 경우
+- 같은 스타일이 너무 많이 반복 선언됨.
+
+<Style> 태그를 이용하여 모든 SPAN 태그에 CSS 주기
+- Style을 같은 태그에 반복해서 적용하는 경우
+
+class 속성을 이용한 CSS 선언, 재사용성 향상
+   - CSS 속성을 class로 선언하면 재사용하기 쉬운 구조를 가지고있어 개발이 편리함   
+   - 같은 태그에 대해서도 상황에따라 다양한 효과 적용 가능, 많이 사용됨.
+   - CSS 속성을 #을 이용한 id로 선언하면 페이지 전체에서 id는 중복선언을 할 수 없음으로 1번만 적용할 수 있음.
+   - 자바의 class와 관련이 없음.
+   
+CSS의 파일 분리
+- 1개 이상의 JSP 페이지에 CSS가 반복해서 사용될 경우
+- 사용: <link href="./css/style0.css" rel="Stylesheet" type="text/css"> 
+
+ -->
+ 
+</head>
+<body>
+<span class='focus1'>윈도우</span> 10 출시 4개월만에 점유율 7.94% 기록
+출시 두 달 째부터는 1%씩 상승…내년부터는 '권장 업데이트'로 바꿔
+<span class='focus1'>윈도우</span> 전체 점유율 90.42%…맥 OS 8.00%
+<br><br>
+[아시아경제 한진주 기자] <br>
+<span class='focus2'>윈도우</span> 10이 출시 3개월만에 점유율 8%를 눈앞에 두고 있다. 
+<span id='ms'>MS의 무료 업그레이드</span> 정책이 조금씩 효과를 내고 있는 것으로 보인다.
+2020년 1월부터 <span class='focus2'>윈도우</span> 10 의무 사용으로 변경  
+</body>
+</html>

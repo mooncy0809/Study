@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/form/html5_form.html</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 24px;}
+</style>
+</head>
+<body>
+<form name='frm' action='./html5_proc1.jsp' method='post'>
+  이자: <input type="number" name='rest' min='0.0' max='27.9' step='0.1' value='15.0'>
+  <br>
+  입력 범위 지정: 0 <input type='range' name='java' value='50' min='0' max='100' step='1' style='width: 125px;'> 100<br>
+  현재 온도: <meter id='heat' min='0' max='100' value="65"></meter><br>
+  다운로드중... <progress max='100' value='30' ></progress><br>
+  예약:
+  <input type="date" name='reser_date' min='2020-11-01'  max='2021-04-30' value="2021-03-17">
+  <input type='time' name='reser_time' value='09:30'>
+  <br>  
+  <label>
+      예약 메뉴:
+      <select name="food">
+        <optgroup label="김밥류">
+          <option value='야채 김밥'>야채 김밥</option>
+          <option value='참치 김밥'>참치 김밥</option>
+          <option value='김치 김밥'>김치 김밥</option>
+        </optgroup>
+        <optgroup label="면류">
+          <option value='라면'>라면</option>
+          <option value='짬뽕라면'>짬뽕라면</option>
+          <option value='해물라면'>해물라면</option>
+        </optgroup>
+        <optgroup label="밥">
+          <option value='김치찌게'>김치찌게</option>
+          <option value='참치찌게'>참치찌게</option>
+          <option value='부대찌게'>부대찌게</option>
+        </optgroup>
+      </select>
+  </label>
+  <button type='submit'>등록</button>
+  <button type='reset'>다시 입력</button>
+  <button type='button' onclick="alert('예약 되었습니다.')">예약</button>
+  <br><br>
+</form>
+
+<!-- 하나의 html 안에 2개이상의 form태그 선언 가능 -->
+<form name="read" action="./html5_proc2.jsp" method="GET">  
+  구입 내역 검색:
+  시작
+  <input type="date" name='shopping_begin' 
+             min='2019-11-01'  max='2021-12-31' value="" >
+  종료
+  <input type="date" name='shopping_end' 
+             min='2019-11-01'  max='2021-12-31' value="" >
+  <button type='submit'>조회</button>           
+</form>
+</body>
+</html>

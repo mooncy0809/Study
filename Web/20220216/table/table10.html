@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/table/table10.html</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 24px;}
+.th1 {
+    background-color:green;
+    color:white;
+}
+.table1{
+    border:solid 1px #AAAAAA;
+    border-collapse: collapse;   /* cell 경계선 결합 */
+}
+th {
+    border:solid 1px #AAAAAA;  /* 외곽선 지정 */  
+  }
+ 
+  td {
+    border:solid 1px #AAAAAA; /* 외곽선 지정 */
+    text-align: center;
+  }
+
+</style>
+</head>
+<body>
+    <table class='table1'>
+    <colgroup>
+      <col style='width: 10%;' />
+      <col style='width: 15%;' />
+      <col style='width: 35%;' />
+      <col style='width: 10%;' />
+      <col style='width: 10%;' />
+      <col style='width: 20%;' />
+    </colgroup>
+    <thead>
+      <TR>
+        <TH class='th1'>번호</TH>
+        <TH class='th1'>파일</TH>
+        <TH class='th1'>제목</TH>
+        <TH class='th1'>성명</TH>
+        <TH class='th1'>조회</TH>
+        <TH class='th1'>등록일</TH>
+      </TR>
+    </thead>
+    <tbody>
+      <TR>
+        <TD class='td1'>1</TD>
+        <TD class='td_img'>
+          <!-- 이미지가 속한 태그 기준으로 100% 적용됨 -->
+          <IMG src='./images/coffee01.jpg' style='width: 100%;'>
+        </TD>
+        <TD class='td1'>제목1</TD>
+        <TD class='td1'>성명1</TD>
+        <TD class='td1'>1</TD>
+        <TD class='td1'>2017-08-18</TD>
+      </TR>
+      <TR>
+        <TD class='td1'>2</TD>
+        <!-- vertical-align: middle; 작동안됨 -->
+        <TD class='td_img' style='vertical-align: middle;'>
+          <IMG src='./images/coffee02.jpg' style='width: 100%;'>
+        </TD>
+        <TD class='td1'>제목2</TD>
+        <TD class='td1'>성명2</TD>
+        <TD class='td1'>2</TD>
+        <TD class='td1'>2017-08-18</TD>
+      </TR>
+      <TR>
+        <TD class='td1'>3</TD>
+        <!-- vertical-align: middle: 작동안됨, height: 100px: 중간으로 이동하나 부정확 -->
+        <TD class='td_img' style='vertical-align: middle; height: 150px;'>
+          <IMG src='./images/coffee03.jpg' style='width: 100%;'>
+        </TD>
+        <TD class='td1'>제목3</TD>
+        <TD class='td1'>성명3</TD>
+        <TD class='td1'>3</TD>
+        <TD class='td1'>2017-08-18</TD>
+      </TR>   
+      <TR>
+        <TD class='td1'>4</TD>
+        <!-- width: 100%; display: block;: 이미지 수직 가운데 정렬 -->
+        <TD class='td_img' style='height: 150px;'>
+          <IMG src='./images/coffee04.jpg' style='width: 100%; display: block;'>
+        </TD>
+        <TD class='td1'>제목4</TD>
+        <TD class='td1'>성명4</TD>
+        <TD class='td1'>4</TD>
+        <TD class='td1'>2017-08-18</TD>
+      </TR>   
+    </tbody>
+  </table>
+  
+</body>
+</html>

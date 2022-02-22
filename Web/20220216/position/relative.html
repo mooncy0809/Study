@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <title>http://localhost:9091/position/relative.html</title>
+<head>
+<style type="text/css">
+  *{ font-size: 24px;}
+  #static {
+    width:100px;
+    height:100px;
+    background-color:green;
+    color: #FFFFFF;
+  }
+  
+  #relative2 {
+    width:100px;
+    height:100px;
+    background-color:yellow;
+    position:relative;
+    top:0px; /* 앞쪽의 태그 기준 */
+    left:100px; /* 좌측 시작 면 0px 기준 */
+  }
+  
+  #relative3 {
+    width:100px;
+    height:100px;
+    background-color:red;
+    position:relative;
+    top:20px;
+    left:200px;
+  }
+  
+  #relative4 {
+    width:100px;
+    height:100px;
+    background-color: lightblue;
+    position:relative;
+    top:-30px;
+    left: 280px;
+  }  
+</style>
+</head>
+
+<body>
+  <div id="static">
+    1. static
+  </div>
+  <div id="relative2">
+    2. relative
+  </div>
+  <div id="relative3">
+    3. relative
+  </div>
+  <div id="relative4">
+    4. relative
+  </div>
+</body>
+</html>
+
+
+
+
+
