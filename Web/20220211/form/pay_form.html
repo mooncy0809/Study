@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/form/pay_form.html</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 26px;}
+</style>
+</head>
+<body>
+<H2>급여 처리</H2>
+<form name='frm' action='./pay_proc.jsp' method='GET'>
+ 본봉:
+ <input type="number" name="pay" min="0" style="width: 25%;"><br>
+ 수당:
+ <input type="number" name="su" min="0" style="width: 25%;"><br><br>
+ <input type="submit" value="처리 진행">
+</form>
+ 
+</body>
+</html>
