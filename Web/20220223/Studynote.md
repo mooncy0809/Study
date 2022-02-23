@@ -75,6 +75,7 @@
 - MyBATIS는 SQL 튜닝 기법을 이용하여 우수한 성능을 갖는 웹페이지 제작이 가능하다. 
     
 1. 실행 아키텍쳐
+```
                           SqlMapConfig 
                                  ↓ 
                           SQL Map 파일 
@@ -86,7 +87,7 @@ POJO                                                  DBMS                POJO(V
                                                         MariaDB
                                                          Oracle
   
-  
+```  
 2. 다운 로드 및 설치(Spring을 사용하지 않는 경우, JSP Model 1 기반) 
     - iBATIS 2.0은 MyBATIS 2와 같습니다.
     - iBATIS 3.0부터는 MyBATIS 3로 변경되고 Annotation 기반으로
@@ -96,17 +97,17 @@ POJO                                                  DBMS                POJO(V
  
 3. Spring의 경우 다운로드가 필요 없습니다. Gradle, Maven 설정으로 자동 다운됩니다.
    - http://mvnrepository.com
-
-1) Spring Boot
 ```
+1) Spring Boot
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
     ......
 }
-```
+
 2) Spring Legacy  
-    ```
+  
     <!-- MyBATIS -->
     <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
     <dependency>
@@ -121,9 +122,10 @@ dependencies {
       <artifactId>mybatis-spring</artifactId>
       <version>1.3.1</version>
     </dependency>
-    ```
+```
   
 4. SQL Maps 설정 파일 
+```
    - transactionManager type="JDBC" 
      . JDBC: 간단한 JDBC기반 트랜잭션 관리 기능을 제공합니다.(일반 적인 사용) 
      . JTA: 컨테이너 기반의 트랜잭션 기능을 제공합니다.(분산 트랜잭션 지원) 
@@ -141,13 +143,13 @@ dependencies {
    - sqlMap resource="/src/main/java/dev/mvc/member/member.xml" 
      . java 소스상에 SQL Map 파일을 저장하고 참조할 경로를 지정합니다. 
  
- 
+``` 
 5. SQL Map 파일 
    - SQL 쿼리를 XML 파일로 매핑하여 저장한 후 호출하여 실행합니다. 
    
   
 6. Project 개발 순서(Spring MVC 기준) 
-   
+```   
 1) 구현 기능 분석(업무 분석) 
 2) DB 모델링(TABLE 생성) 
 3) SQL 생성 및 테스트 
@@ -171,14 +173,15 @@ dependencies {
 10) Controller, Beans(Tool(Utility 날짜 처리등 각종 메소드), Paging, Download)
 11) JSP 제작, Controller, Beans와 연동
 12) 테스트
-
+```
 
 7. JAVA + DBMS 연동 기술 흐름
+```
 1) Spring -> MyBATIS -> SQL -> DBMS
    - 대용량 DBMS에 대응하는 SQL 튜닝을 할 수 있음.
 2) Spring -> JPA -> SQL 자동 생성됨 -> DBMS
    - SQL을 생성하는 메소드가 지정되어 있어서 규모가 큰 DBMS의 SQL 최적화를 구현하기 어려움.
-
+``
 
 
 * HTML과 XML의 비교
