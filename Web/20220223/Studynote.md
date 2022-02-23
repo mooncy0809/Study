@@ -55,24 +55,24 @@
     ```
 
 [02] MyBATIS framework 3.4.1 개론 
-    - http://www.mybatis.org
-    - download: https://github.com/mybatis/mybatis-3/releases 
-    - SQL과 비즈니스 로직(자바)이 분리되어 있어 개발 및 배포 및 관리가 뛰어남. 
-    - 자바 개발시 SQL이 DAO class에 포함되어 있으면 SQL을 추출하여 테스트가 어렵다.
-    - SQL이 변경되는 경우 관련 자바 코드를 변경해야하는 단점이 있다.
-    - DAO class에 SQL을 선언할경우 컬럼이 많아지면 JAVA 코드상에서 단순반복 작업이 크게 증가한다.
-    - MyBATIS를 이용하면 자바와 DBMS의 연결을 XML을 이용하여 선언하고 Connection open/close를
+- http://www.mybatis.org
+- download: https://github.com/mybatis/mybatis-3/releases 
+- SQL과 비즈니스 로직(자바)이 분리되어 있어 개발 및 배포 및 관리가 뛰어남. 
+- 자바 개발시 SQL이 DAO class에 포함되어 있으면 SQL을 추출하여 테스트가 어렵다.
+- SQL이 변경되는 경우 관련 자바 코드를 변경해야하는 단점이 있다.
+- DAO class에 SQL을 선언할경우 컬럼이 많아지면 JAVA 코드상에서 단순반복 작업이 크게 증가한다.
+- MyBATIS를 이용하면 자바와 DBMS의 연결을 XML을 이용하여 선언하고 Connection open/close를
       자동으로 지원함으로 안정성이 높아진다.
-    - SQL을 JAVA와 분리함으로 독립적인 팀 개발이 가능하며 개발 시간을 단축 할 수 있음.
-    - SQL 실행과 관련된 많은 코드(Connection, PreparedStatement, ResultSet, ? Parameter 지정)를 코딩할 필요가 없다.
-    - VO(DTO)가 SELECT시 자동으로 생성된다.
-    - 일반 SQL뿐만 아니라 PL/SQL, 저장 프로시져까지 MyBATIS는 처리할 수 있음.
+- SQL을 JAVA와 분리함으로 독립적인 팀 개발이 가능하며 개발 시간을 단축 할 수 있음.
+- SQL 실행과 관련된 많은 코드(Connection, PreparedStatement, ResultSet, ? Parameter 지정)를 코딩할 필요가 없다.
+- VO(DTO)가 SELECT시 자동으로 생성된다.
+- 일반 SQL뿐만 아니라 PL/SQL, 저장 프로시져까지 MyBATIS는 처리할 수 있음.<br>
        . Stored procedure도 SQL을 JAVA에서 분리하나 데이터베이스 종속적으로
          DBMS를 변경하면 재사용할 수 없고 MySQL 용으로 다시 프로시저를
          제작해야함. 
-    - 파라미터와 제어문을 이용하여 동적으로 실행 할 SQL을 지정할 수 있음. 
-    - Spring은 MyBATIS가 선언한 SQL과 관련된 JAVA 코드를 자동으로 생성한다.
-    - MyBATIS는 SQL 튜닝 기법을 이용하여 우수한 성능을 갖는 웹페이지 제작이 가능하다. 
+- 파라미터와 제어문을 이용하여 동적으로 실행 할 SQL을 지정할 수 있음. 
+- Spring은 MyBATIS가 선언한 SQL과 관련된 JAVA 코드를 자동으로 생성한다.
+- MyBATIS는 SQL 튜닝 기법을 이용하여 우수한 성능을 갖는 웹페이지 제작이 가능하다. 
     
 1. 실행 아키텍쳐
                           SqlMapConfig 
