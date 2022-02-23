@@ -52,11 +52,7 @@
     } finally {
       dbclose.close(con, pstmt, rs);
     }
-```
- 
-
-
-
+    ```
 
 [02] MyBATIS framework 3.4.1 개론 
     - http://www.mybatis.org
