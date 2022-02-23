@@ -181,7 +181,7 @@ dependencies {
    - 대용량 DBMS에 대응하는 SQL 튜닝을 할 수 있음.
 2) Spring -> JPA -> SQL 자동 생성됨 -> DBMS
    - SQL을 생성하는 메소드가 지정되어 있어서 규모가 큰 DBMS의 SQL 최적화를 구현하기 어려움.
-``
+```
 
 
 * HTML과 XML의 비교
