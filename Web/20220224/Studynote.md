@@ -126,9 +126,9 @@
 ```
 
 ## EL&JSTL의 사용
-```
-- JSTL 선언 : \<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+- JSTL 선언 : \<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+```
 1. 변수지원 태그 
 - 천단위 구분자 출력
   <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -136,7 +136,7 @@
   
 
 ▷ /webapp/jstl/setTag.jsp 
-
+-------------------------------------------------------------------------------------
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -191,7 +191,9 @@
    - 사용예 
      <c:if test="${vo.name == 'kim' && vo.nickname == 'kim'}">...</c:if> 
      <c:if test="${vo.name == 'kim' || vo.nickname == 'kim'}">...</c:if>   
-<hr>
+     
+▷ /webapp/jstl/ifTag.jsp
+-------------------------------------------------------------------------------------
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -258,12 +260,14 @@ a01는 서울입니다.(대문자 변환)
 개발 경력: 5 중급 개발자
 권장 AI 개발 Device: intel CUDA 3.0
 GPU 기반 개발 가능
-<hr>
+-------------------------------------------------------------------------------------
 
 3. choose Tag 
    - when tag는 조건이 true이면 실행합니다. 
    - if ~ else ~ 문과 같은 역활을 함. 
-<hr>
+   
+▷ /webapp/jstl/chooseTag.jsp 
+-------------------------------------------------------------------------------------
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -300,7 +304,8 @@ GPU 기반 개발 가능
 [실행 화면]
 - http://localhost:9091/jstl/chooseTag.jsp
 개발 등급이 없습니다.        
-<hr> 
+-------------------------------------------------------------------------------------
+
 4. forEach 태그 
    - Collection, Map에 저장되어 있는 값에 순차적으로 접근시에 사용합니다. 
    - var="item": 객체나 배열의 값이 하나씩 추출되어 저장될 변수나 객체명. 
@@ -335,7 +340,9 @@ GPU 기반 개발 가능
      <TD>${vo.title}</TD>
    </TR>
 </c:forEach>     
-<hr>
+
+▷ /webapp/jstl/forEachTag.jsp
+-------------------------------------------------------------------------------------
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dev.el.ELDTO" %>
@@ -424,5 +431,6 @@ GPU 기반 개발 가능
 </html>    
 [실행 화면]
 ![image](https://user-images.githubusercontent.com/84116509/155487245-e02fb463-6736-4ef5-9466-1c754ec859a7.png)
-<hr>
+-------------------------------------------------------------------------------------
+
 ```
