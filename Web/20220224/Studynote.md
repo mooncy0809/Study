@@ -126,19 +126,17 @@
 ```
 
 ## EL&JSTL의 사용
+```
 - JSTL 선언 : \<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 1. 변수지원 태그 
 - 천단위 구분자 출력
-  ```
   <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
   <fmt:formatNumber value="${pay }" pattern="￦ #,###" /> 
-  ```
+  
 
 ▷ /webapp/jstl/setTag.jsp 
--------------------------------------------------------------------------------------
 
-```
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -178,7 +176,7 @@
 </body>
  
 </html>
-```    
+
 -------------------------------------------------------------------------------------
 
 2. if 흐름제어 태그의 사용 
@@ -190,13 +188,10 @@
    - param.age : Integer.parseInt(request.getParameter("age"));와 동일, 자동 형변환
    - IE는 주소 표시줄에 한글 직접 입력시 깨짐으로 크롬을 이용하세요.
      <FORM>태그에서의 데이터 입출력은 정상적으로 이루어짐.  
-   - 사용예
-    ``` 
+   - 사용예 
      <c:if test="${vo.name == 'kim' && vo.nickname == 'kim'}">...</c:if> 
-     <c:if test="${vo.name == 'kim' || vo.nickname == 'kim'}">...</c:if> 
-     ```
+     <c:if test="${vo.name == 'kim' || vo.nickname == 'kim'}">...</c:if>   
 <hr>
-```
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -255,7 +250,6 @@ http://localhost:9091/jstl/ifTag.jsp?code=a01&lang=%EC%9E%90%EB%B0%94&year=6&cpu
     
 </body>
 </html>
-```
 [실행 화면]
 무조건 수행
 a01는 서울이 아닙니다.
@@ -270,7 +264,6 @@ GPU 기반 개발 가능
    - when tag는 조건이 true이면 실행합니다. 
    - if ~ else ~ 문과 같은 역활을 함. 
 <hr>
-```
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -303,8 +296,7 @@ GPU 기반 개발 가능
     </c:choose>a
 
 </body>
-</html>
-```        
+</html>      
 [실행 화면]
 - http://localhost:9091/jstl/chooseTag.jsp
 개발 등급이 없습니다.        
@@ -320,7 +312,6 @@ GPU 기반 개발 가능
 1) JSTL을 이용한 고유한 ID의 생성과 JS 함수로의 전달
 - 하나의 JSP 페이지에서 id값은 고유해야합니다. 중복을 방지하기위하여 '${info.count}'등을
   사용합니다.
-``` 
 <input type="number" id="cnt${info.index }" name="cnt">
 →
 <input type="number" id="cnt0" name="cnt">
@@ -332,25 +323,19 @@ GPU 기반 개발 가능
 <A href="javascript:proc(frm.cnt1.value)">
 <A href="javascript:proc(frm.cnt2.value)">
 <A href="javascript:proc(frm.cnt3.value)">
-```   
 2) 마지막 요소의 처리 
-```
 <c:forEach items="${fileList}" var="current" varStatus="info">
    { id: 1001, data: [ "<c:out value="${current.fileName}" />", "<c:out value="${current.path}" />" ] }
    <c:if test="${!info.last}">,</c:if>
 </c:forEach>
-```
 3) 일련번호의 출력: 1 ~ 레코드수
-``` 
 <c:forEach items="${fileList}" var="current" varStatus="info">
    <TR>
      <TD>${info.count}</TD>
      <TD>${vo.title}</TD>
    </TR>
 </c:forEach>     
-```
 <hr>
-```
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dev.el.ELDTO" %>
@@ -437,7 +422,7 @@ GPU 기반 개발 가능
 
 </body>
 </html>    
-```
 [실행 화면]
 ![image](https://user-images.githubusercontent.com/84116509/155487245-e02fb463-6736-4ef5-9466-1c754ec859a7.png)
 <hr>
+```
