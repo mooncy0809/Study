@@ -136,8 +136,9 @@
   ```
 
 ▷ /webapp/jstl/setTag.jsp 
-<HR>
-<code>
+-------------------------------------------------------------------------------------
+
+```
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -153,9 +154,7 @@
 </head> 
  
 <body>
-   <!-- JSTL -->
-
-   
+   <!-- JSTL --> 
    ${img } JAVA<BR>
    ${img } JSP<BR>
    ${img } SPRING<BR>
@@ -179,9 +178,9 @@
 </body>
  
 </html>
-</code>
-<HR>
-    
+```    
+-------------------------------------------------------------------------------------
+
 2. if 흐름제어 태그의 사용 
    - test: 조건을 명시하며, 'test'란 속성명은 변경 할 수 없습니다, test는 변수가 아님.
    - else문은 현재 지원하지 않습니다. 
