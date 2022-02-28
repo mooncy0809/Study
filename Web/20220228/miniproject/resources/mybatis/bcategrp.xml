@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="dev.mvc.bcategrp.BcategrpDAOInter"> 
+  <!-- 등록, 입력: CategrpVO, 리턴: 등록된 레코드 갯수  -->
+  <insert id="create" parameterType="dev.mvc.bcategrp.BcategrpVO">
+    INSERT INTO bcategrp(bcategrpno, name, seqno, visible, rdate)
+    VALUES(bcategrp_seq.nextval, #{name}, #{seqno}, #{visible}, sysdate)
+  </insert>
+  
+  <!-- 
+  레코드 갯수 만큼 CategrpVO 객체를 만들어 ArrayList에 저장하여 리턴,
+  List<CategrpVO> list = new ArrayList<CategrpVO>(); 
+  -->
+ <select id="list_categrpno_asc" resultType="dev.mvc.bcategrp.BcategrpVO">
+    SELECT  bcategrpno, name, seqno, visible, rdate
+    FROM bcategrp
+    ORDER BY bcategrpno ASC
+  </select>
+   
+   <!-- 조회, id: read, 입력: categrpno, 리턴: CategrpVO -->
+  <select id="read" resultType="dev.mvc.bcategrp.BcategrpVO" parameterType="int">
+    SELECT  bcategrpno, name, seqno, visible, rdate
+    FROM bcategrp
+    WHERE bcategrpno=#{bcategrpno}
+  </select>
+ 
+ <!-- 수정, id: update, 입력: BcategrpVO, 리턴: int -->
+  <update id="update" parameterType="dev.mvc.bcategrp.BcategrpVO">
+    UPDATE bcategrp
+    SET name=#{name}, seqno=#{seqno}, visible=#{visible}
+    WHERE bcategrpno = #{bcategrpno}
+  </update>
+  
+</mapper> 
