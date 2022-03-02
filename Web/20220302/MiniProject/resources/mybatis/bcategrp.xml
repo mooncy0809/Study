@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="dev.mvc.bcategrp.BcategrpDAOInter"> 
+  <!-- 등록, 입력: CategrpVO, 리턴: 등록된 레코드 갯수  -->
+  <insert id="create" parameterType="dev.mvc.bcategrp.BcategrpVO">
+    INSERT INTO bcategrp(bcategrpno, name, seqno, visible, rdate)
+    VALUES(bcategrp_seq.nextval, #{name}, #{seqno}, #{visible}, sysdate)
+  </insert>
+  
+  <!-- 
+  레코드 갯수 만큼 CategrpVO 객체를 만들어 ArrayList에 저장하여 리턴,
+  List<CategrpVO> list = new ArrayList<CategrpVO>(); 
+  -->
+ <select id="list_categrpno_asc" resultType="dev.mvc.bcategrp.BcategrpVO">
+    SELECT  bcategrpno, name, seqno, visible, rdate
+    FROM bcategrp
+    ORDER BY bcategrpno ASC
+  </select>
+ 
+ <!-- 수정, id: update, 입력: BcategrpVO, 리턴: int -->
+  <update id="update" parameterType="dev.mvc.bcategrp.BcategrpVO">
+    UPDATE bcategrp
+    SET name=#{name}, seqno=#{seqno}, visible=#{visible}
+    WHERE bcategrpno = #{bcategrpno}
+  </update>
+  
+     <!-- 조회, id: read, 입력: categrpno, 리턴: CategrpVO -->
+  <select id="read" resultType="dev.mvc.bcategrp.BcategrpVO" parameterType="int">
+    SELECT  bcategrpno, name, seqno, visible, rdate
+    FROM bcategrp
+    WHERE bcategrpno=#{bcategrpno}
+  </select>
+  
+  <!-- 삭제 처리, id=delete, 입력: PK, 리턴: 삭제된 갯수 int -->
+  <delete id="delete" parameterType="int">
+    DELETE FROM bcategrp
+    WHERE bcategrpno=#{bcategrpno}
+  </delete>
+  
+  <!-- 
+  레코드 갯수 만큼 BcategrpVO 객체를 만들어 ArrayList에 저장하여 리턴,
+  List<BcategrpVO> list = new ArrayList<BcategrpVO>(); 
+  -->
+ <select id="list_seqno_asc" resultType="dev.mvc.bcategrp.BcategrpVO">
+    SELECT  bcategrpno, name, seqno, visible, rdate
+    FROM bcategrp
+    ORDER BY seqno ASC
+  </select>
+  
+  <!-- 우선순위 상향 up 10 ▷ 1 -->
+  <update id="update_seqno_up" parameterType="int">
+    UPDATE bcategrp
+    SET seqno = seqno - 1
+    WHERE bcategrpno=#{bcategrpno}
+  </update>
+
+  <!-- 우선순위 하향 down 1 ▷ 10 --> 
+  <update id="update_seqno_down" parameterType="int">
+    UPDATE bcategrp
+    SET seqno = seqno + 1
+    WHERE bcategrpno=#{bcategrpno}
+  </update>
+  
+  <!-- Visible 수정, id: update_visible, 입력: BcategrpVO, 리턴: int -->
+  <update id="update_visible" parameterType="dev.mvc.bcategrp.BcategrpVO">
+    UPDATE bcategrp
+    SET visible=#{visible}
+    WHERE bcategrpno = #{bcategrpno}
+  </update>
+</mapper> 
