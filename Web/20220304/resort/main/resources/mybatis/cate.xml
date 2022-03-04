@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- dev.mvc.cate.CateDAOInter 패키지에 등록된 interface 명시, 패키지명과 인터페이스명은 실제로 존재해야함, 
+    Spring이 내부적으로 자동으로 interface를 구현해줌. -->
+<mapper namespace="dev.mvc.cate.CateDAOInter">
+    <!-- insert: INSERT SQL 실행 id: Spring에서 호출시 사용 parameterType: 전달받는 데이터 
+        객체의 타입 return: 등록한 레코드 갯수 리턴 SQL선언시 ';'은 삭제 #{name}: public String getName() 
+        자동 호출 #{categrpno}:VO class의 public int getCategrpno() 자동 호출 -->
+    <insert id="create" parameterType="dev.mvc.cate.CateVO">
+        INSERT INTO cate(cateno,
+        categrpno, name, rdate, cnt)
+        VALUES(cate_seq.nextval,
+        #{categrpno}, #{name}, sysdate, 0)
+    </insert>
+
+    <!-- 전체 목록 레코드 갯수 만큼 CateVO 객체를 만들어 ArrayList에 저장하여 리턴, List<CateVO> 
+        list = new ArrayList<CateVO>(); -->
+    <select id="list_all" resultType="dev.mvc.cate.CateVO">
+        SELECT cateno, categrpno,
+        name, rdate, cnt
+        FROM cate
+        ORDER BY cateno ASC
+    </select>
+    <!-- 카테고리 그룹별 목록 -->
+    <select id="list_by_categrpno"
+        resultType="dev.mvc.cate.CateVO" parameterType="int">
+        SELECT cateno, categrpno, name, rdate, cnt
+        FROM cate
+        WHERE categrpno = #{categrpno}
+        ORDER BY cateno ASC
+    </select>
+    
+    <!-- Categrp + Cate join, 연결 목록 -->
+  <select id="list_all_join" resultType="dev.mvc.cate.Categrp_CateVO">
+    SELECT r.categrpno as r_categrpno, r.name as r_name,
+               c.cateno, c.categrpno, c.name, c.rdate, c.cnt
+    FROM categrp r, cate c
+    WHERE r.categrpno = c.categrpno
+    ORDER BY categrpno ASC, cateno ASC
+  </select>
+</mapper>
