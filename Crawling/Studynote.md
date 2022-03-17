@@ -50,7 +50,7 @@
 - 하나의 태그 검색
 - find("table",{"id":"giftList"}): <TABLE> 태그중에 id 속성의 값이 'giftList'인 태그
 - findAll(id="firstHeading"): 여러개의 태그 검색, children 속성 지원안함.
-- children: 후손 태그의 list_iterator, list 값을 순차적으로 추출 가능<br>
+- children: 후손 태그의 list_iterator, list 값을 순차적으로 추출 가능 <br><br>
  
 4. 형제 태그 다루기
 - find("table",{"id":"giftList"}).tr.next_siblings: <table> 태그중에 id 속성의 값이 'giftList' 태그를 검색 한 후
