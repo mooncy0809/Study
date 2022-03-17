@@ -34,7 +34,7 @@
 - 데이터 수집시 사용자가 웹페이지를 이용하는 것처럼 상호 작용을 처리하기는 어려움.
 - https://www.crummy.com/software/BeautifulSoup/
 1) BeautifulSoup 객체 구조
-    html → <html> .... </html>
+   ``` html → <html> .... </html>
           head → <head> .... </head>
                 title → <title>A Useful Page</title>
           body → <body> ..... </body>
@@ -42,7 +42,7 @@
                 div → <div> .... </div>
                 .....
                 .....
-  
+  ```
 2) get_text()
 - 태그를 없애고 순수 문자열을 산출합니다.
   
