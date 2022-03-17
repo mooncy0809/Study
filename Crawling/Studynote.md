@@ -44,16 +44,16 @@
                 .....
 ```
 #### get_text()
-- 태그를 없애고 순수 문자열을 산출합니다.
+   - 태그를 없애고 순수 문자열을 산출합니다.
   
 #### find(), findAll() 함수
    - 하나의 태그 검색
    - find("table",{"id":"giftList"}): <TABLE> 태그중에 id 속성의 값이 'giftList'인 태그
    - findAll(id="firstHeading"): 여러개의 태그 검색, children 속성 지원안함.
    - children: 후손 태그의 list_iterator, list 값을 순차적으로 추출 가능 
-   
-#### 형제 태그 다루기
-- find("table",{"id":"giftList"}).tr.next_siblings: <table> 태그중에 id 속성의 값이 'giftList' 태그를 검색 한 후
+
+#### 형제 태그 다루기   
+   - find("table",{"id":"giftList"}).tr.next_siblings: <table> 태그중에 id 속성의 값이 'giftList' 태그를 검색 한 후
  두번째 <tr>태그부터 산출함.
  
 #### 부모 태그 다루기
