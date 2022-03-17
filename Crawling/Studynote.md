@@ -34,7 +34,7 @@
 - 데이터 수집시 사용자가 웹페이지를 이용하는 것처럼 상호 작용을 처리하기는 어려움.
 - https://www.crummy.com/software/BeautifulSoup/
 1) BeautifulSoup 객체 구조
-   ``` html → <html> .... </html>
+``` html → <html> .... </html>
           head → <head> .... </head>
                 title → <title>A Useful Page</title>
           body → <body> ..... </body>
@@ -42,7 +42,7 @@
                 div → <div> .... </div>
                 .....
                 .....
-  ```
+```
 2) get_text()
 - 태그를 없애고 순수 문자열을 산출합니다.
   
@@ -61,13 +61,13 @@
   . img 태그중에 src 속성의 값이  '../img/gifts/img1.jpg'인 태그를 검색
   . 부모 태그 검색
   . 부모 태그의 이전 형제 검색
-    <td>
+```    <td>
       $15.00
     </td>
    <td>
       <img src="../img/gifts/img1.jpg">
     </td>
- 
+``` 
 6) 정규 표현식
 - 문자열 검색과 변경을 지원하는 문법
 - images = bsObj.findAll("img", {"src":re.compile("\.\.\/img\/gifts/img.*\.jpg")})
