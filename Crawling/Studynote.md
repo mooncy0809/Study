@@ -43,53 +43,66 @@
                 .....
                 .....
 ```
-#### get_text()
-   - 태그를 없애고 순수 문자열을 산출합니다.
-  
-#### find(), findAll() 함수
-   - 하나의 태그 검색
-   - find("table",{"id":"giftList"}): <TABLE> 태그중에 id 속성의 값이 'giftList'인 태그
-   - findAll(id="firstHeading"): 여러개의 태그 검색, children 속성 지원안함.
-   - children: 후손 태그의 list_iterator, list 값을 순차적으로 추출 가능 
+2)&nbsp;get_text()<br />
+- 태그를 없애고 순수 문자열을 산출합니다.<br />
+&nbsp;&nbsp;</span>
 
-#### 형제 태그 다루기   
-   - find("table",{"id":"giftList"}).tr.next_siblings: <table> 태그중에 id 속성의 값이 'giftList' 태그를 검색 한 후
- 두번째 <tr>태그부터 산출함.
- 
-#### 부모 태그 다루기
-- print(bsObj.find("img",{"src":"../img/gifts/img1.jpg"}).parent.previous_sibling.get_text()):
-  . img 태그중에 src 속성의 값이  '../img/gifts/img1.jpg'인 태그를 검색
-  . 부모 태그 검색
-  . 부모 태그의 이전 형제 검색
-```    <td>
-      $15.00
-    </td>
-   <td>
-      <img src="../img/gifts/img1.jpg">
-    </td>
-``` 
-#### 정규 표현식 
-- 문자열 검색과 변경을 지원하는 문법
-- images = bsObj.findAll("img", {"src":re.compile("\.\.\/img\/gifts/img.*\.jpg")})
-- re.compile(""): 정규 표현식을 사용하기전에 파싱하여 메모리상에 최적화 함. 
-- .는 '\'를 이용하여 기능이 없는 단순 문자로 사용 가능
-- "\.\.\/img\/gifts/img.*\.jpg": ../img/gifts/img로 시작하며 .*는 한문자와 대응하는 모든 문자열이며
-  \.jpg는 .jpg로 끝나는 모든 문자열
-- .*: 모든 문자와 대응, 앞에 나오는 문자가 없거나 한번 이상 대응, 가장 긴 문자열 최대 일치,
-     줄바꿈을 제외한 모든문자
-  
-## Selenium
-- Web 페이지(HTML, Javascript...)의 내용을 네트웍에 접속하여 필요한 부분만 메모리로 다운로드한 후
-  데이터를 수집하고 연결을 유지함.
-- https://www.instagram.com의 경우는 로그인을해야 데이터 수집이 가능함.
-- 데이터 수집시 마치 사용자가 웹페이지를 이용하는 것처럼 상호 작용을 가능하게 함. 
-- 데이터 수집에 필요한 로그인, 문장 입력 및 마우스 클릭등의 기능 지원
-- 매크로 제작을 지원하는 패키지
-- https://www.selenium.dev
-  
-## robots.txt
-- 데이터 수집을 허락 또는 거부한다는 목록
-- 프로그램적인 기능은 없는 text 파일
-- 많은 Crawling은 크롤링되는 사이트에 트래픽 유발등 부하가 발생함으로 허가하지 않음.
-- 크롤링은 현재 페이지의 컨텐츠를 수집하는 것이고 접속 기록이 모두 Log에 남으로 주의가 필요함.
-- Crawling 기능을 거부하고 Rest 기반의 Access Key를 제공하고 일정 이용 빈도 이상은 요금을 청구함.
+<div><span style="font-size:20px">3)&nbsp;find(),&nbsp;findAll()&nbsp;함수</span></div>
+
+<div><span style="font-size:20px">- 하나의 태그 검색</span></div>
+
+<div><span style="font-size:20px">- find(&quot;table&quot;,{&quot;id&quot;:&quot;giftList&quot;}): &lt;TABLE&gt; 태그중에 id 속성의 값이 &#39;giftList&#39;인 태그<br />
+- findAll(id=&quot;firstHeading&quot;): 여러개의 태그 검색, children 속성 지원안함.</span></div>
+
+<div><span style="font-size:20px">- children: 후손 태그의 list_iterator, list 값을 순차적으로 추출 가능</span><br />
+&nbsp;
+<div><span style="font-size:20px">4)&nbsp;형제 태그 다루기</span></div>
+
+<div><span style="font-size:20px">- find(&quot;table&quot;,{&quot;id&quot;:&quot;giftList&quot;}).tr.next_siblings: &lt;table&gt; 태그중에 id 속성의 값이 &#39;giftList&#39; 태그를 검색 한 후</span></div>
+
+<div><span style="font-size:20px">&nbsp;두번째 &lt;tr&gt;태그부터 산출함.</span></div>
+<span style="font-size:20px"> &nbsp;</span>
+
+<div><span style="font-size:20px">5)&nbsp;부모 태그 다루기</span></div>
+
+<div><span style="font-size:20px">- print(bsObj.find(&quot;img&quot;,{&quot;src&quot;:&quot;../img/gifts/img1.jpg&quot;}).parent.previous_sibling.get_text()):</span></div>
+
+<div><span style="font-size:20px">&nbsp; . img 태그중에 src 속성의 값이 &nbsp;&#39;../img/gifts/img1.jpg&#39;인 태그를 검색</span></div>
+
+<div><span style="font-size:20px">&nbsp; . 부모 태그 검색</span></div>
+
+<div><span style="font-size:20px">&nbsp; . 부모 태그의 이전 형제 검색</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &lt;td&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; $15.00</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &lt;/td&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp;&lt;td&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;../img/gifts/img1.jpg&quot;&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &lt;/td&gt;</span></div>
+</div>
+<span style="font-size:20px"> &nbsp;</span>
+
+<div><span style="font-size:20px">6)&nbsp;정규 표현식<br />
+- 문자열 검색과 변경을 지원하는 문법</span></div>
+
+<div><span style="font-size:20px">- images = bsObj.findAll(&quot;img&quot;, {&quot;src&quot;:re.compile(&quot;\.\.\/img\/gifts/img.*\.jpg&quot;)})</span></div>
+
+<div><span style="font-size:20px">- re.compile(&quot;&quot;): 정규 표현식을 사용하기전에 파싱하여 메모리상에 최적화 함.&nbsp;<br />
+- .는 &#39;\&#39;를 이용하여 기능이 없는 단순 문자로 사용 가능</span></div>
+
+<div><span style="font-size:20px">- &quot;\.\.\/img\/gifts/img.*\.jpg&quot;: ../img/gifts/img로 시작하며 .*는 한문자와 대응하는 모든 문자열이며</span></div>
+
+<div><span style="font-size:20px">&nbsp; \.jpg는 .jpg로 끝나는 모든 문자열</span></div>
+
+<div><span style="font-size:20px">- .*: 모든 문자와 대응, 앞에 나오는 문자가 없거나 한번 이상 대응, 가장 긴 문자열 최대 일치,</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp;줄바꿈을 제외한 모든문자</span></div>
+</div>
+
+<div><br />
+&nbsp;</div>
