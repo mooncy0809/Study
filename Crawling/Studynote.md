@@ -33,7 +33,7 @@
   Regular Expression(정규 표현식)과 BeautifulSoup을 같이 사용할 수 있음.
 - 데이터 수집시 사용자가 웹페이지를 이용하는 것처럼 상호 작용을 처리하기는 어려움.
 - https://www.crummy.com/software/BeautifulSoup/
-1) BeautifulSoup 객체 구조
+1. BeautifulSoup 객체 구조
 ``` html → <html> .... </html>
           head → <head> .... </head>
                 title → <title>A Useful Page</title>
@@ -43,20 +43,20 @@
                 .....
                 .....
 ```
-2) get_text()
+2. get_text()
 - 태그를 없애고 순수 문자열을 산출합니다.
   
-3) find(), findAll() 함수
+3. find(), findAll() 함수
 - 하나의 태그 검색
 - find("table",{"id":"giftList"}): <TABLE> 태그중에 id 속성의 값이 'giftList'인 태그
 - findAll(id="firstHeading"): 여러개의 태그 검색, children 속성 지원안함.
 - children: 후손 태그의 list_iterator, list 값을 순차적으로 추출 가능<br>
  
-4) 형제 태그 다루기
+4. 형제 태그 다루기
 - find("table",{"id":"giftList"}).tr.next_siblings: <table> 태그중에 id 속성의 값이 'giftList' 태그를 검색 한 후
  두번째 <tr>태그부터 산출함.
  
-5) 부모 태그 다루기
+5. 부모 태그 다루기
 - print(bsObj.find("img",{"src":"../img/gifts/img1.jpg"}).parent.previous_sibling.get_text()):
   . img 태그중에 src 속성의 값이  '../img/gifts/img1.jpg'인 태그를 검색
   . 부모 태그 검색
@@ -68,7 +68,7 @@
       <img src="../img/gifts/img1.jpg">
     </td>
 ``` 
-6) 정규 표현식
+6. 정규 표현식
 - 문자열 검색과 변경을 지원하는 문법
 - images = bsObj.findAll("img", {"src":re.compile("\.\.\/img\/gifts/img.*\.jpg")})
 - re.compile(""): 정규 표현식을 사용하기전에 파싱하여 메모리상에 최적화 함. 
