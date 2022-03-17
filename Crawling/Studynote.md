@@ -33,16 +33,22 @@
   Regular Expression(정규 표현식)과 BeautifulSoup을 같이 사용할 수 있음.
 - 데이터 수집시 사용자가 웹페이지를 이용하는 것처럼 상호 작용을 처리하기는 어려움.
 - https://www.crummy.com/software/BeautifulSoup/
-#### BeautifulSoup 객체 구조
-``` html → <html> .... </html>
-          head → <head> .... </head>
-                title → <title>A Useful Page</title>
-          body → <body> ..... </body>
-                h1 →<h1>An Interesting Title</h1>
-                div → <div> .... </div>
-                .....
-                .....
-```
+<div><span style="font-size:20px">1) BeautifulSoup 객체 구조</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; html &rarr; &lt;html&gt; .... &lt;/html&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; head &rarr; &lt;head&gt; .... &lt;/head&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; title &rarr; &lt;title&gt;A Useful Page&lt;/title&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; body &rarr; &lt;body&gt; ..... &lt;/body&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; h1 &rarr;&lt;h1&gt;An Interesting Title&lt;/h1&gt;</span></div>
+
+<div><span style="font-size:20px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; div &rarr; &lt;div&gt; .... &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .....<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .....<br />
+&nbsp;&nbsp;<br />
 2)&nbsp;get_text()<br />
 - 태그를 없애고 순수 문자열을 산출합니다.<br />
 &nbsp;&nbsp;</span>
