@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, width=device-width" />
+<title>http://localhost:9091/javascript/basic/js01.html</title>
+<link href="/css/style.css" rel="Stylesheet" type="text/css">
+</head>
+<script type="text/javascript">
+   
+</script>
+<body>
+    <script type="text/javascript">
+      var url1 = 'http://www.kma/go.kr'; // var: 변수 선언을 뜻함.   
+      document.writeln('screen:' + url1);
+      console.log('console: ' + url1);  // 디버깅
+      
+      document.writeln('<br>');
+      
+      let url2 = 'http:www.daum.nut';
+      document.writeln('url2: ' + url2);
+      
+      // let url2 = 'http:www.kyobobook.co.kr'; // 'ulr2' has already been declared
+      // document.writeln('url2: ' + url2);
+      
+      var url1 = 'http://www.google.co.kr';
+      document.writeln('<br>url1: ' + url1);
+      
+      const trip = 'swiss'; // 상수임으로 최초 선언된 값 변경 불가능
+      //trip = 'koera';  
+      
+      document.writeln('<br>3/5: ' + 3/5);
+      document.writeln('<br>3%5: ' + 3%5);
+      
+      let java=90;
+      document.writeln('<br>1. '+typeof java);
+      java='A';
+      document.writeln('<br>2. '+typeof java);
+      java=95.5;
+      document.writeln('<br>3. '+typeof java);
+      java=true;
+      document.writeln('<br>4. '+typeof java);
+      
+      java='90';
+      spring='87.5';
+      document.writeln('<br>5. '+(java+spring));
+      document.writeln('<br>6. '+(parseInt(java)+parseFloat(spring)));
+
+      
+   </script>
+</body>
+
+</html>
