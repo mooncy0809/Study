@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, width=device-width" /> 
+<title>http://localhost:9091/javascript/basic/dom1.html</title>
+<link href="/css/style.css" rel="Stylesheet" type="text/css">
+<script type="text/javascript">
+    window.onload = function() { // 페이지 로딩시 자동 실행
+        create();	
+    }
+    
+	function create() {
+	    let tags = "<IMG src='./images/fog01.jpg' style='width: 180px; height: 130px; margin: 2px;'>";
+	    tags += "<IMG src='./images/fog02.jpg' style='width: 180px; height: 130px; margin: 2px;'>";    
+	    tags += "<IMG src='./images/fog03.jpg' style='width: 180px; height: 130px; margin: 2px;'>";
+	        
+	    let panel1 = document.getElementById("panel1"); // 'panel1' id를 이용하여 태그를 찾아 panel1 변수에 할당
+	    let panel2 = document.getElementById("panel2");
+	    
+	    panel1.innerHTML = tags;
+	    panel2.innerHTML = tags;
+	}
+	
+	// DOM을 이용한 태그 삭제
+	function remove_panel1() {
+	    var panel1 = document.getElementById("panel1"); // <DIV id='panel1'...
+	    var sw = confirm('panel1을 삭제 하시겠습니까?');
+	    if (sw == true) {
+	      // 부모 기준 panel1을 삭제
+	      document.getElementById("container").removeChild(panel1);
+	    }
+    }	
+</script>
+</head> 
+<body>
+<DIV id='container'>
+  <DIV id='panel1' style='margin: 0px auto; text-align: center;'></DIV>
+  <DIV id='panel2' style='margin: 0px auto; text-align: center;'></DIV>
+  <DIV id='panel3' style='margin: 0px auto; text-align: center;'></DIV>
+  <DIV style='text-align: center; margin-top: 10px;'>
+    <button type='button' onclick="remove_panel1();">Panel1 삭제</button>
+    <button type='button' onclick="replace_panel2();">Panel2 이미지 교체</button>
+    <button type='button' onclick="location.reload();">초기화</button>
+    <button type='button' onclick="remove();">모두삭제</button>
+    <button type='button' onclick="location.href='http://www.weather.go.kr'">기상청</button>
+    <button type='button' onclick="">기능 없음</button>
+  </DIV>
+</DIV>
+</body>
+ 
+</html>
+

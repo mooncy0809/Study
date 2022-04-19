@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, width=device-width" /> 
+<title>http://localhost:9091/javascript/basic/js02.html</title> 
+<link href="/css/style.css" rel="Stylesheet" type="text/css">
+</head> 
+<body>
+<script type="text/javascript">
+
+	if (5 % 2 == 0) {
+		document.writeln("짝수");
+	} else {
+		document.writeln("홀수");
+	}
+
+	document.writeln('<br>');
+	let cnt = 0;
+	while (true) {
+		cnt = cnt + 1;
+		document.writeln('cnt=' + cnt + '<br>');
+		if (cnt == 3) {
+			break;
+		}
+	}
+	for (i = 0; i <= 2; i++) {
+		document.writeln('i=' + i + '<br>');
+	}
+	var season = 1;
+	  if (season == 12 || season == 1 || season == 2) {
+	    document.write('겨울 입니다. ' + season + "<br>");
+	  }
+	  
+	  season = 7;
+	  if (season >= 6 && season <= 8) {
+	    document.write('여름 입니다. ' + season + "<br>");
+	  }
+	  
+	  var score = -10
+	  if (score < 0 || score > 1000 ) {  // 무한대 범위등
+	    document.write('범위를 벗어났습니다. ' + score + "<br>");
+	  }
+
+	  score = 100
+	  if (score >= 0 && score <= 1000 ) { // 범위 한정
+	    document.write("처리 가능: " + score + "<br>");
+	  } else {
+	    document.write("처리 불가능: " + score + "<br>");
+	  }
+</script> 
+</body>
+ 
+</html>

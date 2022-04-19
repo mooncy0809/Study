@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, width=device-width" /> 
+<title>http://localhost:9091/javascript/basic/fun01.html</title>
+<link href="/css/style.css" rel="Stylesheet" type="text/css">
+<script type="text/javascript">
+    function wl(str) {
+    	document.writeln(str + "<br>");
+    }
+    
+    function add(data1, data2) {
+    	return data1 + data2;
+    }
+</script> 
+</head> 
+<body>
+<script type="text/javascript">
+    wl('함수 출력 테스트');
+    let tot = add(100, 200);
+    wl('tot: ' + tot);
+    
+    tot = add(100.3, 200.5);
+    wl('tot: ' + tot);
+    
+    tot = add('봄', '여름');
+    wl('tot: ' + tot);
+    
+    let no = 123.567;
+    wl('1) ' + Math.ceil(no));     // 가까운 정수로 반올림
+    wl('2) ' + Math.floor(no));   // 가까운 정수로 짤림    
+    wl('3) ' + Math.round(no)); // 반올림
+    wl('4) ' + no.toFixed(0))
+    wl('5) ' + no.toFixed(1))
+    
+    // 10의 자리 제거
+    no=1995.456;
+    // wl('6) ' + no.toFixed(-1))   // ERROR
+    no = no / 100
+    wl('6) ' + no);
+    no = Math.floor(no);
+    wl('7) ' + no);
+    no = no * 100;
+    wl('8) ' + no);
+    
+    // 10의 자리 올림
+    no=1995.456;
+    // wl('6) ' + no.toFixed(-1))   // ERROR
+    no = no / 100
+    wl('9) ' + no);
+    no = Math.ceil(no);
+    wl('10) ' + no);
+    no = no * 100;
+    wl('11) ' + no);
+    
+    // window 생략 가능
+    window.alert('알림\n주문이 완료되었습니다.');
+    
+    let sw = window.confirm('파일을 삭제하시겠습니까?');
+    if (sw == true) {
+    	alert('파일을 삭제합니다.');
+    } else {
+    	alert('파일 삭제를 취소합니다.');
+    }
+    
+    let su1 = window.prompt('수를 입력하세요.', 100);
+    let su2 = window.prompt('수를 입력하세요.', 200);
+    wl(add(su1, su2));
+    wl(add(parseInt(su1), parseInt(su2)));
+</script>    
+</body>
+ 
+</html>
+
+
+
+
+
+

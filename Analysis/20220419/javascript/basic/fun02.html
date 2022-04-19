@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, width=device-width" /> 
+<title>http://localhost:9091/javascript/basic/fun02.html</title>
+<link href="/css/style.css" rel="Stylesheet" type="text/css">
+<script type="text/javascript">
+    function wl(str) { // 출력 단순화
+        document.writeln(str + "<br>");
+    }
+    
+    function comma(su) {
+        return su.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+</script>
+</head> 
+<body>
+<script type="text/javascript">
+    let str = 'user1/123/서울시 종로구';
+    wl('1) ' + typeof str);
+    
+    let strs = str.split('/');
+    wl('2) ' + typeof strs);
+    wl(strs[0]);
+    wl(strs[1]);
+    wl(strs[2]);
+    wl('-----------------------------');
+    var title = '     투표하세요.     ';
+    wl(title.length); // 16, 공백/한글 1자
+    title = title.trim();
+    wl('>' + title + '<');
+    wl(title.length);
+    wl('-----------------------------');
+    let pay = comma(2500000);
+    wl(pay);
+    wl('-----------------------------');
+    let tot = '10 + 5';
+    wl('tot: ' + tot);
+    wl('tot: ' + eval(tot));  // string -> js code
+    wl('-----------------------------');
+    // 가변 인자 사용 가능, 값을 전달받지 못한 변수는 undefined 할당
+    function sungjuk(kor, eng, mat) {
+      wl('kor: ' + kor);
+      wl('eng: ' + eng);
+      wl('mat: ' + mat);
+      wl('--------------------');
+    }
+    
+    sungjuk(80);
+    sungjuk(80, 90);
+    sungjuk(80, 90, 100);
+    sungjuk(80, 90, 100, 500);  // 500은 무시됨.    
+    wl('-----------------------------');    
+    let maple = function(year) { // 무명함수 선언, 함수를 변수에 할당
+        wl(year + '년 가을');
+    }
+    
+    maple(2020);
+    
+    let season = maple // 변수간 함수 할당
+    season(2021);    
+</script> 
+</body>
+ 
+</html>
+
+
+
+
+
+
