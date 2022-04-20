@@ -84,6 +84,7 @@
   ```
   
 ## Event의 처리(BUTTON, SUBMIT) 
+```
 
 1) <A href="javascript:sendit();">에서 javascript 키워드 생략 불가능.
 
@@ -187,3 +188,4 @@
       . href 속성의 값으로 함수 선언시 'javascript'를 선언해야함.
 
     - API: http://www.w3schools.com/jsref/jsref_obj_global.asp
+```
