@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>http://localhost:9091/javascript/basic/input_form1.html</title>
+<link href="/css/style.css" rel='Stylesheet' type='text/css'> <!-- /static -->
+<script type="text/javascript">
+    function comma(su) {
+        return su.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
+    function msg_clear() {
+    	document.getElementById('msg').innerHTML = '';
+    }
+    
+    function basic() {
+    	document.frm.rname.value='바다전망 30평';
+    	frm.py.value=30;
+    	frm.cnt.value=3;
+    }
+    
+    function increaseCnt() {
+    	msg_clear();
+    	
+    	let cnt =  parseInt(frm.cnt.value) + 1
+    	if (cnt > 10) {
+    		document.getElementById('msg').innerHTML = '최대 인원은 10명까지입니다.';
+    		cnt = 10;
+    	}
+        frm.cnt.value = cnt;    	 
+    }
+
+    function decreaseCnt() {
+    	msg_clear();
+    	
+        let cnt =  parseInt(frm.cnt.value) - 1
+        if (cnt <= 0) {
+            document.getElementById('msg').innerHTML = '최소 인원은 1명입니다.';
+            cnt = 1;
+        }
+        frm.cnt.value = cnt;         
+    }
+    
+    // <button type='button' onclick="price(this.form);">금액 계산</button>
+    // this: button, this.form: <form name='frm' action='./input_proc.jsp' method='post'>
+    // 태그를 함수로 전달 가능, f <- this.form
+    function price(f){
+    	msg_clear();
+        let py = parseInt(f.py.value);
+        let cnt = parseInt(f.cnt.value);
+      
+        if (py < 10 || py > 50) { // 관계 연산자, 논리 연산자
+        	document.getElementById('msg').innerHTML = '평수는 10평 ~ 50평입니다.';
+    	    f.py.value='';
+    	    f.py.focus();
+    	    return;  // 중지
+        }
+      
+        if (cnt <= 0 || cnt > 10) {
+            document.getElementById('msg').innerHTML = '인원은 1명 ~ 10명입니다.';
+            f.cnt.value='';
+            f.cnt.focus();
+            return;
+        }
+        
+        // 1평을 1만원
+        let amount = (py * 10000) + (cnt * 5000);
+        document.getElementById('msg').innerHTML ='결재금액: ' + comma(amount) + ' 원'; 
+      
+    }
+    
+    function send(f) {
+        msg_clear();
+        
+        let rname = f.rname.value.trim();  // 공백제거
+        if (rname.length < 1) {
+            document.getElementById('msg').innerHTML = '객실명을 입력해주세요.';
+            f.rname.value = '';  // 공백제거
+            f.rname.focus();
+            return;
+        }
+        
+        let py = parseInt(f.py.value);
+        let cnt = parseInt(f.cnt.value);
+      
+        if (py < 10 || py > 50) { // 관계 연산자, 논리 연산자
+            document.getElementById('msg').innerHTML = '평수는 10평 ~ 50평입니다.';
+            f.py.value='';
+            f.py.focus();
+            return;  // 중지
+        }
+      
+        if (cnt <= 0 || cnt > 10) {
+            document.getElementById('msg').innerHTML = '인원은 1명 ~ 10명입니다.';
+            f.cnt.value='';
+            f.cnt.focus();
+            return;
+        }
+        
+        f.submit();
+    }
+    
+    function price2(f) { // f = document.frm2
+        let amount = parseInt(f.cnt.value) * 5000;
+        alert('추가인원 금액: ' + comma(amount) + ' 원');
+    }
+</script>
+</head>
+<body>
+<DIV class='container'>
+  <DIV class='content'>
+    <DIV class='title_box'>펜션 예약</DIV>
+    <form name='frm' action='./input_proc.jsp' method='post'>
+      <ul>
+        <li class='li_none'>
+          객실: <input type='text' name='rname' value='' required="required">
+        </li>
+        <li class='li_none'>
+          크기: <input type='number' name='py' value='' step='1' min='5' max='50'> 평
+        </li>
+        <li class='li_none'>
+          인원: <input type='number' name='cnt' value='' step='1' min='1' max='10'> 명
+        </li>
+        <li class='li_none'>
+          <DIV id='msg' style='background-color: #FFFFFF; color: #0000FF;'></DIV>
+        </li>
+        <li class='li_none'>
+          <button type='button' onclick="basic();">기본 예약</button>
+          <button type='button' onclick="increaseCnt();">인원 증가</button>
+          <button type='button' onclick="decreaseCnt();">인원 감소</button>
+          <button type='reset' onclick="msg_clear();">입력값 삭제</button>
+          <!-- this.form: 현재 태그가 위치한 폼을 나타냄. -->
+          <button type='button' onclick="price(this.form);">금액 계산</button>
+          <button type='submit'>신청 1</button>
+          <button type='button' onclick="send(this.form);">신청 2</button>
+        </li>
+        <li class='li_none'>
+          [<A href='http://www.kma.go.kr' onclick="alert('내일 첫눈이 옵니다.')">기상청</A>]
+          [<A href='price(this.form)'>비용 계산1(X)</A>] <!-- javascript 접두사 누락 -->
+          [<A href='javascript:price(this.form)'>비용 계산2(X)</A>] <!-- form 태그 명시 에러 -->
+          [<A href='javascript:price(document.form)'>비용 계산3(X)</A>]  <!-- form 태그 명시 에러 -->
+          [<A href='javascript:price(document.frm)'>비용 계산4</A>]
+          [<A href='javascript:price(frm)'>비용 계산5</A>]
+        </li>
+      </ul>
+    </form>
+    <br>
+    추가 옵션<BR>
+    <form name='frm2'>
+      <ul>
+        <li class='li_none'>
+          인원: <input type='number' name='cnt' value='' step='1' min='1' max='10'> 명
+        </li>
+        <li class='li_none'>
+          <button type='button' onclick="price2(this.form);">금액 계산</button>
+          [<A href='javascript:price2(frm2)'>비용 계산1</A>]
+        </li>
+      </ul>  
+    </form>
+  </DIV> 
+</DIV>
+</body>
+</html>
+
