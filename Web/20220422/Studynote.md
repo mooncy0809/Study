@@ -855,7 +855,10 @@ $("checkbox[name='fruits']").prop('checked', false); // 전체해제하기
      웹 서버와 통신을 합니다. 
    - 페이지 이동 없이 특정 HTML 콘트롤이 웹 서버와 통신을 하여 결과를 
      화면에 출력합니다. 따라서 추가, 목록, 수정, 삭제, 검색을 하나의 JSP페이지에서
-     이동없이 전부 구현 가능.  <Br>![image](https://user-images.githubusercontent.com/84116509/164618042-c1502501-93db-4ccb-85b3-58badccd110b.png)
+     이동없이 전부 구현 가능.
+``` 
+   <Br>![image](https://user-images.githubusercontent.com/84116509/164618042-c1502501-93db-4ccb-85b3-58badccd110b.png)
+```
 2. Spring Controller에서 '/WEB-INF/views/javascript/json/object1.html'로 redirect해도 'WEB-INF' 폴더의
    html 에 접근이 불가능함으로 인식이 안됨 ★
   /**
