@@ -822,3 +822,319 @@ $("checkbox[name='fruits']").prop('checked', false); // 전체해제하기
     return sw;
   }
 ```
+
+
+## 자바 스크립트 비동기 통신, Ajax(Asynchronous JavaScript and JSON(XML))의 이해
+   - 자바스트립트의 객체기반 비동기 통신 유형의 통신 기술입니다.
+  
+   - 비동기 자바스크립트와 JSON(XML)기반 스크립트 통신을 말합니다.  
+     예) 동기: 창구 직원 대화, 전화, 미용실 이용, 택배 배달 대기, 일반적인 웹페이지 사용
+          비동기: 은행의 번호표, 택배 배달후 확인, 응답이 바로 도착하지 않아도 되는 처리
+              
+   - 불안정한 WEB 환경에서 비동기 통신을 지원해 안정적인 웹 사이트 
+     환경을 구축할 수 있습니다. 페이지 로딩이 순간 안되도 자동으로 재시도하여 요청을합니다. 
+ 
+   - Ajax를 사용하면 『특정 HTML 태그』가 서버와 통신을 함으로 트래픽이 
+     감소되어 더 많은 동시 접속자와 더 빠르게 웹 컨텐트를 제공할 수 있음
+     예) 일반적인 경우: qna.html(jsp) -> Controller -> Process -> 페이지 전환 -> proc.jsp
+          Ajax 통신: qna.html(jsp)(<button type='button'...>) <-> Ajax <-> Controller <-> Process
+                        사용자가 접하는 화면(화면 이동 없음)
+
+   - 사용자는 페이지 이동이 없는 상태에서의 처리를 가장 편하게 생각함.
+ 
+   - 네트워크 트래픽량에 따라 과금되는 모바일 접속용 웹페이지에 매우 중요하게 사용됨. 
+ 
+   - 좁은 화면의 불편한 모바일웹의 사용자 인터페이스를 세련되게 향상 시킬 수 있다. 
+ 
+   - Web 2.0(상호 작용, 커뮤니케이션, SNS(페이스북, 트위터등)의 주요 기술 
+ 
+   - Ajax 구현 사이트의 예: 다음등 추천, 스포츠 문자등 페이지 전환이 안되는 대부분의 웹사이트 
+```      
+1. Ajax 방식(하나의 HTML 태그 단위의 데이터 전송 기법) 
+   - JSP 페이지 단위 통신이 아니라 웹 브러우져의 XMLHttpRequest(Ajax) Javascript 객체가
+     웹 서버와 통신을 합니다. 
+   - 페이지 이동 없이 특정 HTML 콘트롤이 웹 서버와 통신을 하여 결과를 
+     화면에 출력합니다. 따라서 추가, 목록, 수정, 삭제, 검색을 하나의 JSP페이지에서
+     이동없이 전부 구현 가능.  <Br>![image](https://user-images.githubusercontent.com/84116509/164618042-c1502501-93db-4ccb-85b3-58badccd110b.png)
+2. Spring Controller에서 '/WEB-INF/views/javascript/json/object1.html'로 redirect해도 'WEB-INF' 폴더의
+   html 에 접근이 불가능함으로 인식이 안됨 ★
+  /**
+   * Ajax를 사용하지 않는 급여 조회
+   * http://localhost:9091/javascript/json/object1.do
+   * @return
+   */
+  @RequestMapping(value = "/javascript/json/object1.do", method = RequestMethod.GET)
+  public ModelAndView pay_form() {
+    ModelAndView mav = new ModelAndView();
+    mav.setViewName("redirect:/javascript/json/object1.html");  // /WEB-INF/views/javascript/json/object1.html
+
+    return mav;
+  }
+    
+  
+ 
+[02] Javascript XMLHttpRequest(Aajx 통신) 객체 
+     - 대부분의 브러우저가 지원함으로 XMLHttpRequest를 실행하는데 문제가 없습니다.  
+ 
+1. XMLHttpRequest 자바스크립트 통신 객체 생성 
+   <script type="text/javascript"> 
+     var ajax= new XMLHttpRequest();   
+   </script> 
+ 
+ 
+ 
+2. 웹 서버에 XMLHttpRequest(Ajax 객체) 객체를 이용한 GET 방식 요청 전송 
+    - <form name='frm' id='frm'>
+ 
+   function load(url) { 
+       ajax.open("GET", url+params, true); 
+       ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+       ajax.onreadystatechange = viewMessage; 
+       ajax.send(null); 
+   } 
+ 
+ 
+ 
+3. 웹 서버에 XMLHttpRequest 객체를 이용한 POST 방식 요청 전송 
+ 
+   function load(url) { 
+       ajax.open("POST", url+params, true); 
+       ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
+       ajax.onreadystatechange = viewMessage; 
+       ajax.send("kuk=100&eng=90"); 
+   } 
+ 
+ 
+ 
+4. XMLHttpRequest(Ajax) 객체 호출 후 응답이 오면 실행할 함수는
+   onreadystatechange 속성에서 지정 
+   - XMLHttpRequest 객체가 웹서버로부터 응답이 도착하면 자바스크립트 함수를
+     호출하는 기능을 가지고 있으며 이 때 이 함수는 Callback 함수의 형태로          
+     onreadystatechange 속성에 할당됩니다.
+     function_name 함수는 서버로부터 응답이 올 때 자동으로 호출되는 함수입니다. 
+ 
+     ajax.onreadystatechange = function_name; 
+ 
+1) XMLHttpRequest(Ajx) 객체 호출 후 응답으로 전달되는 readyState 속성 
+   onreadystatechange 속성에서 설정된 함수는 readyState의 값이 변경 
+   될때 마다 호출됩니다. 이 속성값을 통해 웹 서버와의 통신 상태를 체크할 수 
+   있습니다.  
+ 
+   - 0(UNINITIALIZED): 객체만 생성되고 초기화 되지 않은 상태 
+   - 1(LOADING): open()가 호출되고 아직 send()가 호출되지 않은 상태  
+   - 2(LOADED): send()메소드가 불렸지만 status와 헤더는 도착하지 않은 상태 
+   - 3(INTERACTIVE): 데이터의 일부를 받은 상태 
+   - 4(COMPLETED): 데이터를 전부받은 상태 
+ 
+   * 브러우저의 버그로 순차적으로 출력은 안되나 요청은 정상 처리 
+ 
+ 
+5. XMLHttpRequest 객체 호출 후 응답으로 전달되는 서버의 처리 결과가 저장된
+    status 속성 
+    - 서버로부터 도착한 응답의 상태가 어떤지 정보를 가지고 있습니다. 
+ 
+   - 200(OK): 요청 정상 처리 
+   - 400:  서버가 데이터를 전송 받지 못했을 때
+   - 403(Forbidden): 접근 거부, 접근 권한 없음 
+   - 404(Not Found): 페이지 없음, 파일 없음, 파일명 오류, 폴더명 오류 
+   - 500(Internal Server Error): 서버 오류 발생, 오타등 문법 에러 
+ 
+ 
+6. XMLHttpRequest 객체 호출 후 응답으로 전달되는 서버의 처리 결과가
+    responseText 속성에 저장되어 전달됨.  
+   - 서버가 전송한 데이터를 가지고 있습니다. 
+ 
+   function viewMessage() { 
+       if (ajax.readyState == 4) {  // 결과 전송 완료 
+           if (ajax.status == 200) { // 정상 처리 
+               alert(ajax.responseText); // 처리 결과 출력 
+           } else { 
+               alert("실패: "req.status); 
+           } 
+       } 
+   } 
+  
+  
+  
+[03] Asynchronous(비동기), Synchronous(동기) 방식의 차이점 
+     - 동기화 방식은 웹 서버의 접속자 폭주로 인한 지연, 통신 상태의 
+       불안정한 상태등의 환경에서 데이터 처리에 많은 취약한 점을 가지고 있으나 
+       비동기 방식은 요청이 거부 될시에 서버의 상태에 따라 다시 처리 요청을 
+       하여 결과를 받아오는 방식으로 Ajax는 비동기 방식을 특징으로 가지고 
+       있으며 비동기 방식을 권장하고 있습니다. 
+ 
+     - 동기 방식은 요청에 응답이 없으면 바로 에러가 출력되나 비동기는 자체적으로 
+       재 요청을하여 결과를 가져옴. 
+ 
+ 
+1. 비동기 방식의 경우(권장) 
+   - 비동기 방식의 경우 send() 함수가 호출된 후 바로 test() 함수가 호출됩니다. 
+   - open() 함수 호출시 true를 전달합니다.
+ 
+   function load(url) { 
+       ajax= getXMLHttpRequest(); 
+       ajax.open("GET", url, true); 
+       ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
+       ajax.onreadystatechange = viewMessage; 
+       ajax.send(null);        
+           
+   }    
+   
+   예) 세탁소에 옷을 갖다주고 드라이가 다 되면 주인으로부터 연락이 오도록 하는 경우,
+        자동차를 정비소에 입고하고 정비하는 동안 미용실에 가는 경우, 
+        어떤일을 진행하면서 다른 일을 할 수 있는 통신 패턴으로 소포 배달의 
+        경우도 비동기 통신임. 
+ 
+  
+2. 동기 방식의 경우 
+   - 동기 방식의 경우 test()함수는 send()함수의 처리가 완전히 종료된 후 
+     호출됩니다. 
+   - open()함수 호출시 flase를 전달합니다.
+ 
+   function load(url) { 
+       ajax= getXMLHttpRequest(); 
+       ajax.open("GET", url, false);
+       ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
+       ajax.onreadystatechange = viewMessage; 
+       ajax.send(null);         
+                    
+   }                                  
+ 
+   예) 기차역에서 승차권을 예매시 승차권 금액을 지불하고 바로 티켓을 받는 경우, 
+        전화 통화의 경우. 
+ 
+ 
+ 
+[04] Ajax 통신으로부터 응답받은 문자열을 Javascript 객체로 변환
+
+1. eval() 함수
+   - 문자열을 Javascript 코드로 변환하며 JSON 형식도 객체로 변경하나 권장하지않음.
+    var result = eval("("+data+")");
+  
+  
+2. JSON 형식(권장)
+   - JSON 형식의 코드만 객체로 변경함.
+   var result = JSON.parse(data);
+
+
+
+[05] jquery ajax 처리 기본 코드
+
+1. JSP Client
+  <script type="text/JavaScript" 
+            src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+  $(function() { // 자동 실행
+    // id가 'btn_send'인 태그를 찾아 'click' 이벤트 처리자(핸들러)로 send 함수를 등록
+    $('#btn_send').on('click', send);  
+  });
+  
+  function send() {
+    var params = $('#frm').serialize(); // 직렬화, 폼의 데이터를 키와 값의 구조로 조합
+    // alert('params: ' + params);
+    // return;
+    $.ajax({
+      url: './pay_proc.jsp', // form action
+      type: 'post',  // form method, get
+      cache: false, // 응답 결과 임시 저장 취소
+      async: true,  // true: 비동기 통신
+      dataType: 'html', // 응답 형식: json, html, xml...
+      data: params,      // 데이터
+      success: function(rdata) { // 응답이 온경우
+        // alert(rdata);
+        $('#panel').html(rdata);  // 보통 DIV, SPAN등에 출력       
+      },
+      // Ajax 통신 에러, 응답 코드가 200이 아닌경우, dataType이 다른경우 
+      error: function(request, status, error) { // callback 함수
+        console.log(error);
+      }
+    });
+    
+    // $('#panel').html('급여를 조회 중입니다...');
+    $('#panel').html("<img src='./images/ani04.gif' style='width: 10%;'>");
+    $('#panel').show(); // 숨겨진 태그의 출력
+  }
+
+
+2. Spring Controller
+   - 출력이 단순 문자열인경우 사용(html, json)
+     import org.springframework.web.bind.annotation.ResponseBody;
+
+1) JSON 출력
+
+  // http://localhost:9091/member/checkID.do?id=user1
+  /**
+  * ID 중복 체크, JSON 출력
+  * @return
+  */
+  @ResponseBody
+  @RequestMapping(value="/member/checkID.do", method=RequestMethod.GET ,
+                         produces = "text/plain;charset=UTF-8" )
+  public String checkID(String id) {
+    try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    int cnt = this.memberProc.checkID(id);
+   
+    JSONObject json = new JSONObject();
+    json.put("cnt", cnt);
+   
+    return json.toString(); 
+  }
+ 
+
+
+2. HTML 출력
+  /**
+   * Ajax를 사용하는 급여 조회
+   * http://localhost:9091/ajax/pay_ajax.do
+   * @return
+   */
+  @RequestMapping(value = "/ajax/pay_ajax.do", method = RequestMethod.GET)
+  public ModelAndView pay_ajax() {
+    ModelAndView mav = new ModelAndView();
+    mav.setViewName("/ajax/pay_ajax");  // /WEB-INF/views/ajax/pay_ajax.jsp
+
+    return mav;
+  }
+  
+  /**
+   * Ajax를 사용하는 급여 조회 처리
+   * http://localhost:9091/ajax/pay_ajax.do
+   * @return html 문자열
+   */
+  @ResponseBody
+  @RequestMapping(value = "/ajax/pay_ajax.do", method = RequestMethod.POST)
+  public String pay_ajax(String id, String passwd) {
+    // System.out.println("-> " + "/ajax/pay_ajax.do called.");
+    
+    try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    
+    DecimalFormat df = new DecimalFormat("#, ###, ### 원");
+    
+    String html = "";
+    if (id.equals("user1") && passwd.equals("1234")) {
+      html   = "성명: 개발자" + "<BR>";
+      html += "아이디: " + id + "<BR>";
+      html += "본봉: " + df.format(2500000) + "<BR>";
+      html += "수당: " + df.format(100000) + "<BR>";
+      html += "합계: " + df.format(2600000) + "<BR>";
+    } else {
+      html = "<div style='color: red;'>아이디와 패스워드가 일치하지 않습니다. <br> 다시 시도해주세요.</div>";
+    }
+
+    return html;
+  }
+  
+```
+
+ 
+ 
+ 
