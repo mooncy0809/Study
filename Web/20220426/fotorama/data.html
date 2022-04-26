@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, width=device-width" /> 
+<title>http://localhost:9091/javascript/fotorama/data.html</title>
+ 
+<script type="text/JavaScript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    var img=''; // 이미지 태그 할당
+    var width=0; // image width
+    var title='';   // image title
+    
+    var div1 = $('#div1'); // id가 div1인 태그 검색
+    console.log('data-width: ' + div1.attr('data-width'));  // 속성 읽기
+    console.log('data-title: ' + div1.attr('data-title'));
+    
+    img = $('#div1 img'); // id가 div1인 태그안의 이미지 태그 검색
+    width = div1.attr('data-width'); // 속성 읽기 
+    title = div1.attr('data-title');
+    img.attr('width', width);   // 속성 쓰기
+    img.attr('title', title);
+    
+    var div2 = $('#div2'); // id가 div2인 태그 검색
+    img = $('#div2 img'); // id가 div2인 태그안의 이미지 태그 검색
+    
+    width = div2.attr('data-width');
+    title = div2.attr('data-title');
+    
+    img.attr('width', width);
+    img.attr('title', title);
+    
+    var div3 = $('#div3');
+    div3.append('<br>');
+    div3.append('<span>여행지: ' + div3.attr('data-where') + ' 날짜: ' +div3.attr('data-travel-date')+'</span>');
+  });
+</script> 
+ 
+</head>
+<body>
+  <DIV id='div1' data-width='200' data-title='스위스 풍경 1'>
+    <IMG src='/javascript/images/spring01.jpg'>
+  </DIV>
+  <DIV id='div2' data-width='300' data-title='스위스 풍경 2'>
+    <IMG src='/javascript/images/spring02.jpg'>
+  </DIV>
+  <DIV id='div3' data-where = '스위스' 
+                      data-travel-date='2021-04-05'>
+    <IMG src='/javascript/images/spring03.jpg' style='width: 400px;'>
+  </DIV>
+  
+</body>
+</html>
