@@ -1,3 +1,4 @@
+## 메인화면
 ![image](https://user-images.githubusercontent.com/84116509/168252122-9bae8bd5-85c3-47b5-a5f3-ec8c0a7a552c.png)
 ### local_actor 기반의 이미지 인식을 통한 영화배우 정보 조회하기, Actor.h5 모델의 사용, Django jQuery, Aajx, Json 연동 개발, 외부 접속
 ![image](https://user-images.githubusercontent.com/84116509/168252160-e01d17d9-cbcd-4b55-ab24-b9281f5663ec.png)
