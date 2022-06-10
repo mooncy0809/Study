@@ -1,0 +1,56 @@
+[01] 개체명 인식을 위한 양방향 LSTM 모델
+
+1. 개체명 인식(NER: Named Entity Recognition)
+   - 문장내에 포함된 어떤 단어가 인물, 장소, 날짜등을 의미하는 단어인지 인식하는 것
+   - 딥러닝 모델이나 확률 모델등을 이용해 문장에서 개체명을 인식하는 프로그램을 개체명 인식기라고함.
+   - 개체명 인식은 챗봇에서 문장을 정확하게 해석하기 위해서 반드시 해야 하는 전처리 과정
+   - 개체명 인식기 제작은 국내에 공개된 학습 데이터가 많지 않음.
+   - 특정 도메인에 특화된 개체명 인식 모델을 개발하기 위해서는 학습 데이터 생성에 많은 시간과 비용이 들어감.
+  
+1) 문장 분류 예
+    입력 문장: 내일 서울 날씨 알려줘
+    의도 분류: 날씨 요청
+    개체명 인식: 내일 -> 날짜, 서울 -> 지역
+
+2) BIO 표기법: Beginning, Inside, Outside의 약자로 각 토큰마다 태그를 붙이는 일
+    . Beginning: 개체명이 시작되는 단어에 'B-개체명'으로 태그
+    . Inside: 'B-개체명'으로 연결되는 단어에 'I-개체명'으로 태그
+    . Outside: 개체명이외의 모든 태그에 'O'으로 태그<br>
+    ![image](https://user-images.githubusercontent.com/84116509/173076698-2971955e-6baa-46a8-b8d9-8d3f76f04661.png)
+   . B_DT: 날짜
+   . B_OG: 기업 상호
+   . B_PS: 사람 이름
+   . B_LC: 국가명
+   . B_TI: 전반, 후반, 시간등 
+
+3) 품사 태그와 BIO 표기법이 명시된, 개체명 인식 모델을 위한 공개된 말뭉치
+    - https://github.com/machinereading/KoreanNERCorpus
+    - ';'으로 시작하는 문장은 원본 문장
+    - '$'으로 시작하는 문장은 NER 처리된 문장
+    - 토큰 번호, 단어 토큰, 품사 태그, BIO 태그로 구성
+    - 데이터 일부
+    <br>
+    ![image](https://user-images.githubusercontent.com/84116509/173076757-2567a5a6-b4aa-4051-b0fb-f59cf3637639.png)
+4) 개체명 인식기의 구조 예) 삼성 전자: B_OG<br>
+![image](https://user-images.githubusercontent.com/84116509/173076830-cd5f25c8-c73d-459f-abf2-237280382ad5.png)
+5) 개체명 인식 모델 블록도<br>![image](https://user-images.githubusercontent.com/84116509/173076884-f71a5744-ad55-4b28-992b-f79335745612.png)
+6) F1 score
+   - 정확도가 높아도 데이터의 구성에따라 편향된 정확도가 산출될 수 있음
+     예) 생존 데이터 90건, 사망 데이터 10건일 경우 생존만 맞추는 모델은 90%의 정확도를 갖음,
+          이 모델은 사망 데이터는 모두 틀렸지만 전체 데이터에 대한 정확도는 90%임으로 잘못된 판단을하게함.
+   - F1 score는 이런 문제를 개선함.
+     . 정밀도와 재현율의 조화평균
+     . 정밀도: 정밀도가 높다고 정확도가 높은 것은 아님, 정밀도가 높으면 결괏값이 일정하게 분포되어 있다는 의미
+     . 재현율: 실제 정답인 것들 중에서 예측 모델이 정답이라고 예측한 비율<Br>![image](https://user-images.githubusercontent.com/84116509/173076939-5a638dfb-04dd-498f-95a5-0c6ecee9b8a8.png)
+   - F1 score는 0 ~ 1사이의 값을 갖으며 1에 가까울수록 우수한 모델이다.
+
+6) seqeval 모듈: F1 score등 지원 모듈
+(ai) C:\WINDOWS\system32>pip install seqeval
+Collecting seqeval
+  Downloading seqeval-1.2.2.tar.gz (43 kB)
+     |????????????????????????????????| 43 kB 3.2 MB/s
+(ai) C:\Windows\system32>pip show seqeval
+Name: seqeval
+Version: 1.2.2
+Summary: Testing framework for sequence labeling
+Home-page: https://github.com/chakki-works/seqeval
