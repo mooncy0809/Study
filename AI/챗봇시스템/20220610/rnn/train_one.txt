@@ -1,0 +1,22 @@
+; 한편, AFC챔피언스리그 E조에 속한 포항 역시 대회 8강 진출이 불투명하다 .
+$한편, AFC챔피언스리그 <E조:OG>에 속한 포항 역시 대회 8강 진출이 불투명하다 .
+1	한편	NNG	O
+1	,	SP	O
+2	AFC	SL	O
+2	챔피언스	NNG	O
+2	리그	NNG	O
+3	E	SL	B_OG
+3	조	NNG	I
+3	에	JKB	O
+4	속하	VV	O
+4	ㄴ	ETM	O
+5	포항	NNP	O
+6	역시	MAJ	O
+7	대회	NNG	O
+8	8강	NNG	O
+9	진출	NNG	O
+9	이	JKS	O
+10	불투명	NNG	O
+10	하	VV	O
+10	다	EC	O
+11	.	SF	O
