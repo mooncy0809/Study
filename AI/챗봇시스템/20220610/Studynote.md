@@ -43,13 +43,3 @@
      . 재현율: 실제 정답인 것들 중에서 예측 모델이 정답이라고 예측한 비율<Br>![image](https://user-images.githubusercontent.com/84116509/173076939-5a638dfb-04dd-498f-95a5-0c6ecee9b8a8.png)
    - F1 score는 0 ~ 1사이의 값을 갖으며 1에 가까울수록 우수한 모델이다.
 
-6) seqeval 모듈: F1 score등 지원 모듈
-(ai) C:\WINDOWS\system32>pip install seqeval
-Collecting seqeval
-  Downloading seqeval-1.2.2.tar.gz (43 kB)
-     |????????????????????????????????| 43 kB 3.2 MB/s
-(ai) C:\Windows\system32>pip show seqeval
-Name: seqeval
-Version: 1.2.2
-Summary: Testing framework for sequence labeling
-Home-page: https://github.com/chakki-works/seqeval
