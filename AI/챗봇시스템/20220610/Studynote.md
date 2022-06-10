@@ -29,8 +29,7 @@
     - '$'으로 시작하는 문장은 NER 처리된 문장
     - 토큰 번호, 단어 토큰, 품사 태그, BIO 태그로 구성
     - 데이터 일부
-    <br>
-    ![image](https://user-images.githubusercontent.com/84116509/173076757-2567a5a6-b4aa-4051-b0fb-f59cf3637639.png)
+    <br>![image](https://user-images.githubusercontent.com/84116509/173077091-b8e0282b-e695-4194-bab1-4e5e018018ce.png)
 4) 개체명 인식기의 구조 예) 삼성 전자: B_OG<br>
 ![image](https://user-images.githubusercontent.com/84116509/173076830-cd5f25c8-c73d-459f-abf2-237280382ad5.png)
 5) 개체명 인식 모델 블록도<br>![image](https://user-images.githubusercontent.com/84116509/173076884-f71a5744-ad55-4b28-992b-f79335745612.png)
