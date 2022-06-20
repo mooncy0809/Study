@@ -91,7 +91,6 @@
    - hdpi: 480 X 800
    - mdpi: 480 X 854, 480 X 800, 320 X 480
    - ldpi: 240 X 432, 240 X 400, 230 X 320
-   <br>
    ![image](https://user-images.githubusercontent.com/84116509/174610875-933b763b-94b2-48aa-bb76-b5c3bd2b010e.png)
 
  
